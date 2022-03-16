@@ -37,7 +37,6 @@ Thumbs.db
 
 # Applications
 *.app
-*.exe
 *.war
 
 # Large media files
@@ -47,4 +46,6 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
+Gemfile.lock
+allure-results/
+screenshots/

@@ -1,0 +1,13 @@
+source 'http://rubygems.org'
+
+gem 'allure-cucumber'
+gem 'capybara'
+gem 'chromedriver-helper'
+gem 'cpf_faker', '1.3.0'
+gem 'cucumber'
+gem 'faker'
+gem 'pry'
+gem 'report_builder'
+gem 'selenium-webdriver'
+gem 'site_prism'
+gem 'webdrivers'
