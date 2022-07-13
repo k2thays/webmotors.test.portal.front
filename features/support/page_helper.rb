@@ -30,4 +30,17 @@ module PageObjects
   def description
     Description.new
   end
+
+  def location
+    Location.new
+  end
+
+  def carfilters
+    CarFilters.new
+  end
+
+  def motofilters
+    MotoFilters.new
+  end
 end
+

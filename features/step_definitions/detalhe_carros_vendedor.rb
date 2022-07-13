@@ -16,4 +16,5 @@ end
 Entao('sou redirecionado para a lista de anuncios') do
     #Assert via css para catalogo de itens
     expect(page).to have_css ".FilterResult__container__list:nth-child(1)"
+    take_screenshot('lista_itens_vendedor','itens_vendedor')
 end

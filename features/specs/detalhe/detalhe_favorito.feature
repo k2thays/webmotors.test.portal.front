@@ -1,3 +1,4 @@
+# encoding: utf-8
 # language: pt
 
 @portal @busca
@@ -11,10 +12,10 @@ Funcionalidade: Validar favorito logado
 
   @favoritos_logado
   Esquema do Cenário: Validar favorito logado web
-    E faço login como "automacaoportal@gmail.com" e "Webmotors.com22"
+      E faço login como "matheustestes4321@gmail.com" e "XzuhKDvqV9Fi8mJ!"
     Quando realizar a busca do carro "<modelo>"
-    E seleciono um anúncio
-    E desejo favoritar
+      E seleciono um anúncio
+      E desejo favoritar
     Entao o anuncio é favoritado
     Exemplos:
       | modelo     |
@@ -32,7 +33,7 @@ Funcionalidade: Validar favorito logado
   Cenário: Validar favorito deslogado
     Quando realizar a busca do carro "<modelo>"
       E desejo adicionar aos favoritos
-      E realizo login como "automacaoportal@gmail.com" e "Webmotors.com22"
+      E realizo login como "matheustestes4321@gmail.com" e "XzuhKDvqV9Fi8mJ!"
       E adiciono aos favoritos
     Entao vejo o anuncio favoritado
     Exemplos:

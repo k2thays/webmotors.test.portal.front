@@ -29,9 +29,11 @@ Então('exibe mensagem de que foi agendado') do
     #Asserts de validação
     expect(page).to have_text "Agendado"
     expect(page).to have_text "Agendamento:"
+    take_screenshot('agendado','agendamento_confirmado')
 end
 
 Então('fico impossibilitado de continuar') do
     #Validação do botão indisponível
     expect(page).to have_button('Continuar', disabled: true)
+    take_screenshot('nao_agendado','agendamento_falha')
 end

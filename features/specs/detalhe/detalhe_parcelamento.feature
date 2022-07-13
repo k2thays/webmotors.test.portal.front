@@ -19,14 +19,7 @@ Funcionalidade: Validar simulação de parcelamento
     Exemplos:
       | modelo |
       | Honda  |
+      | Ford   |
+      |Renault |
 
-  @ver_parcelas_sem_avisar
-  Esquema do Cenário: Simular parcelamento sem avisar
-      E faço a busca por um "<modelo>"
-      E seleciono um anúncio
-    Quando preencho o formulário para consulta
-      E decido não avisar
-    Entao deve #VERIFICAR RESULTADO DO FINANCIMANETO EM HOMOLOGAÇÃO
-    Exemplos:
-      | modelo |
-      | Honda  |
+ 

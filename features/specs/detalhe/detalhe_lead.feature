@@ -1,3 +1,4 @@
+# encoding: utf-8
 # language: pt
 
 
@@ -24,6 +25,20 @@ Funcionalidade: Validar envio lead
       | modelo |
       | Honda  |
 
+  @lead_falha
+  Esquema do Cenário: Lead sem preencher os campos
+      E faço a busca por um "Honda"
+      E seleciono um anúncio
+    Quando preencho somente alguns campos:
+      | nome         | email         | telefone         | mensagem         |
+      | <nome_input> | <email_input> | <telefone_input> | <mensagem_input> |
+    Então não posso enviar a mensagem, pois o botão fica desabilitado
+    Exemplos:
+      | nome_input | email_input       | telefone_input | mensagem_input    |
+      |            | testes@testes.com | 11992176665    | Mensagem de teste |
+      | Testes     |                   | 11992176665    | Mensagem de teste |
+      | Testes     | testes@testes.com |                | Mensagem de teste |
+      | Testes     | testes@testes.com | 11992176665    |                   |
 
   @denunciar_anuncio
   Esquema do Cenário: Denunciar um anuncio

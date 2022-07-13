@@ -3,9 +3,8 @@ class ScheduleCall < SitePrism::Page
     element :input_email, "input[placeholder='E-mail']"
     element :input_phone, "input[placeholder='Telefone']"
 
-    element :arrow, ".sc-esjQYD"
-    element :day, ".XWnny:nth-child(3) > .sc-RefOD"
-    element :hour, ".sc-epnACN:nth-child(5) > .sc-iQNlJl"
+    element :day_arrow_right, ".sc-esjQYD"
+    element :hour_arrow_right, ".sc-gwVKww.cAJaAi"
     
 
     def fill_form(name, email, phone)
@@ -15,8 +14,7 @@ class ScheduleCall < SitePrism::Page
     end
     
     def select_date
-        arrow.click
-        day.click
-        hour.click
+        day_arrow_right.click
+        hour_arrow_right.click
     end
 end

@@ -13,7 +13,7 @@ end
 
 Quando('seleciono um anúncio') do
     #Remover autocompletar de localização
-    favorite.remove_locator
+    location.remove_locator
     expect(page).to have_text "Novos e Usados"
     #Escolhendo um item do catálogo e validação
     favorite.choose_item
@@ -39,7 +39,7 @@ Quando('realizo login como {string} e {string}') do |email, password|
     favorite.fill_login(email, password)
     expect(page).to have_text "Novos e Usados"
     #Remover autocompletar de localização
-    favorite.remove_locator
+    location.remove_locator
     expect(page).to have_text "Novos e Usados"
 end
 
@@ -51,9 +51,11 @@ end
 Entao('o anuncio é favoritado') do
     #Assert via css, dentro do item selecionado
     expect(page).to have_css ".VehicleDetails__header__top .sc-jzJRlG.iHAlVS"
+    take_screenshot('favoritado','carro_favorito')
 end
 
 Entao('vejo o anuncio favoritado') do
     #Assert após click de favorito
     expect(page).to have_css ".sc-gqPbQI.ldOiUz:nth-child(2) .sc-jzJRlG.dVKAHr"
+    take_screenshot('favoritado_listagem','lista_carros_favoritado')
 end
