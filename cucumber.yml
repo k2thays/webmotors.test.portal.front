@@ -4,4 +4,4 @@
   ci: --format progress
   html_report: --format html --out=results/report.html
   json_report: --format json --out=results/report.json
-  allure: --format pretty --publish-quiet --color --format AllureCucumber::CucumberFormatter --out results/allure-results
+  allure: --format pretty --color --format AllureCucumber::CucumberFormatter --out results/allure-results

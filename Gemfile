@@ -9,7 +9,10 @@ gem 'faker'
 gem 'pry'
 gem 'report_builder'
 gem 'rspec'
+<<<<<<< HEAD
 gem 'rubocop'
+=======
+>>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
 gem 'selenium-webdriver'
 gem 'site_prism'
 gem 'webdrivers'

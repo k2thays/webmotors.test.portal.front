@@ -14,6 +14,13 @@ Quando('verifico todos anuncios de um vendedor') do
 end
   
 Entao('sou redirecionado para a lista de anuncios') do
+<<<<<<< HEAD
   # Assert via css para catalogo de itens
   expect(page).to have_css '.FilterResult__container__list:nth-child(1)'
 end
+=======
+    #Assert via css para catalogo de itens
+    expect(page).to have_css ".FilterResult__container__list:nth-child(1)"
+    take_screenshot('lista_itens_vendedor','itens_vendedor')
+end
+>>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70

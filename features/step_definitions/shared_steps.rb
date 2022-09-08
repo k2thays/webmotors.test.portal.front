@@ -1,4 +1,5 @@
 Dado('que estou na home da webmotors') do
+<<<<<<< HEAD
   visit('')
   home_page.verificar_home
   home_page.aceitar_coockies
@@ -30,4 +31,13 @@ Entao('sou redirecionado para a página do {string} escolhido') do |menu_vender|
     expect(page).to have_text 'Quer vender seu carro e não se preocupar com nada?'
     take_screenshot('menu_vender', 'faz_tudo')
   end
+=======
+    visit('')
+    home_page.verificar_home
+    home_page.aceitar_coockies
+end
+  
+Dado('faço a busca por um {string}') do |modelo|
+    home_page.pesquisar_veiculo(modelo)
+>>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
 end

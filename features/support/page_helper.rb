@@ -42,8 +42,13 @@ module PageObjects
   def motofilters
     MotoFilters.new
   end
+<<<<<<< HEAD
 
   def latestsearch
     LatestSearch.new
   end
 end
+=======
+end
+
+>>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
