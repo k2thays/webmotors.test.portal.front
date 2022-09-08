@@ -1,5 +1,4 @@
 class Favorite < SitePrism::Page
-<<<<<<< HEAD
   element :login_menu, '.Menu-User__login'
   element :login_button, '#userLoginRegister'
   element :input_email, '#email'
@@ -14,7 +13,7 @@ class Favorite < SitePrism::Page
     login_menu.hover
     login_button.click
   end
-=======
+
     element :login_menu, ".Menu-User__login"
     element :login_button, "#userLoginRegister"
     element :input_email, "#email"
@@ -29,7 +28,6 @@ class Favorite < SitePrism::Page
         login_menu.hover
         login_button.click
     end
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
 
   def fill_login(email, password)
     input_email.set email
@@ -37,7 +35,6 @@ class Favorite < SitePrism::Page
     click_button 'Entrar'
   end
 
-<<<<<<< HEAD
   def choose_item
     car_item.click
   end
@@ -56,11 +53,6 @@ class Favorite < SitePrism::Page
     fav_unchecked_carlist.click
     fav_unchecked_carlist.click
   end
-end
-=======
-    def choose_item
-        car_item.click
-    end
 
     def fav_add
         if has_fav_checked_cardetails?(wait: 1)
@@ -82,4 +74,3 @@ end
         fav_unchecked_carlist.click
     end
 end
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70

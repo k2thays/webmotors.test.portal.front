@@ -1,5 +1,4 @@
 class Installment < SitePrism::Page
-<<<<<<< HEAD
   element :input_name, 'form[class="Forms__container"] input[name="fullName"]'
   element :input_email, 'form[class="Forms__container"] input[name="email"]'
   element :input_phone, 'form[class="Forms__container"] input[name="numberPhone"]'
@@ -7,7 +6,7 @@ class Installment < SitePrism::Page
   element :input_cpf, 'form[class="Forms__container"] input[name="cpf"]'
   element :location_select, '.Form__field.Form__field--select'
   element :proposal_send, 'button[data-qa="btnSendProposalFinancing"]'
-  
+ 
   def fill_form
     input_name.set Faker::Name.first_name
     input_email.set Faker::Internet.email
@@ -29,15 +28,6 @@ class Installment < SitePrism::Page
   def show_result
     proposal_send.click
   end
-end
-=======
-    element :input_name, :xpath, "//div[@class='Forms__container__form']//input[@name='fullName']"
-    element :input_email, :xpath, "//div[@class='Forms__container__form']//input[@name='email']"
-    element :input_phone, :xpath, "//div[@class='Forms__container__form']//input[@name='numberPhone']"
-    element :input_birthday, :xpath, "//div[@class='Forms__container__form']//input[@name='birthday']"
-    element :input_cpf, :xpath, "//div[@class='Forms__container__form']//input[@name='cpf']"
-    element :location_select, ".Form__field.Form__field--select"
-    element :proposal_send, ".Forms__footer > #ButtonSendProposal"
 
     def fill_form
         input_name.set Faker::Name.first_name
@@ -61,4 +51,4 @@ end
         proposal_send.click
     end
 end 
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
+

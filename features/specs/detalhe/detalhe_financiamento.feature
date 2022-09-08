@@ -3,11 +3,7 @@
 
 @portal @detalhe
 Funcionalidade: Validar simulação de financiamento
-<<<<<<< HEAD
   Eu como Usuario
-=======
-      Eu como Usuario
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
   Quero simular um financiamento
   Para escolher a melhor opção de pagamento
 
@@ -16,7 +12,6 @@ Funcionalidade: Validar simulação de financiamento
 
   @financiamento
   Esquema do Cenário: Simular financiamento
-<<<<<<< HEAD
     E faço a busca por um "<modelo>"
     E seleciono um anúncio
     Quando preencho o formulário para consulta
@@ -90,4 +85,4 @@ Funcionalidade: Validar simulação de financiamento
       | Testador   | teste@teste.com | 45986808277    |                  | 02130822339 | São Paulo    |
       | Testador   | teste@teste.com | 45986808277    | 01/01/1990       |             | São Paulo    |
       | Testador   | teste@teste.com | 45986808277    | 01/01/1990       | 02130822339 | Selecione um estado |
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
+

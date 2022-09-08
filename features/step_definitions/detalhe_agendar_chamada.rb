@@ -24,7 +24,6 @@ Quando('seleciono período') do
   schedule.select_date
 end
   
-<<<<<<< HEAD
 Entao('exibe mensagem de que foi agendado') do
   click_button 'Continuar'
   # Asserts de validação
@@ -36,18 +35,3 @@ Entao('fico impossibilitado de continuar') do
   # Validação do botão indisponível
   expect(page).to have_button('Continuar', disabled: true)
 end
-=======
-Então('exibe mensagem de que foi agendado') do
-    click_button "Continuar"
-    #Asserts de validação
-    expect(page).to have_text "Agendado"
-    expect(page).to have_text "Agendamento:"
-    take_screenshot('agendado','agendamento_confirmado')
-end
-
-Então('fico impossibilitado de continuar') do
-    #Validação do botão indisponível
-    expect(page).to have_button('Continuar', disabled: true)
-    take_screenshot('nao_agendado','agendamento_falha')
-end
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70

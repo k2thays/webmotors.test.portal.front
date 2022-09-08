@@ -3,11 +3,7 @@
 
 @portal
 Funcionalidade: Webmotors Web
-<<<<<<< HEAD
-  Teste de login
-=======
       Teste de login
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
 
   Contexto:
     Dado que estou na home da webmotors

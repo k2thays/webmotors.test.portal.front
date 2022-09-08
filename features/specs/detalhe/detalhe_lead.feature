@@ -20,7 +20,6 @@ Funcionalidade: Validar envio lead
     Quando envio mensagem do lead
     Entao recebo a confirmação
     Exemplos:
-<<<<<<< HEAD
     | modelo |
     | Honda  |
 
@@ -38,9 +37,7 @@ Funcionalidade: Validar envio lead
     | Testes     |                   | 14999999999    | Mensagem de teste |
     | Testes     | testes@testes.com |                | Mensagem de teste |
     | Testes     | testes@testes.com | 14999999999    |                   |
-=======
-      | modelo |
-      | Honda  |
+
 
   @lead_falha
   Esquema do Cenário: Lead sem preencher os campos
@@ -56,7 +53,7 @@ Funcionalidade: Validar envio lead
       | Testes     |                   | 11992176665    | Mensagem de teste |
       | Testes     | testes@testes.com |                | Mensagem de teste |
       | Testes     | testes@testes.com | 11992176665    |                   |
->>>>>>> 7d4e5bb0627b2f4d2fcbb9d1e807a342dab76d70
+
 
   @denunciar_anuncio
   Esquema do Cenário: Denunciar um anuncio
