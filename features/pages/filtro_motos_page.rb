@@ -46,7 +46,4 @@ class MotoFilters < SitePrism::Page
     wait_until_slide_close_visible
     color_silver.click
   end
-
-
 end
-

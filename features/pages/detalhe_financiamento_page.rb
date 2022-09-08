@@ -29,26 +29,25 @@ class Installment < SitePrism::Page
     proposal_send.click
   end
 
-    def fill_form
-        input_name.set Faker::Name.first_name
-        input_email.set Faker::Internet.email
-        input_phone.set "11992176665"
-        input_birthday.set "19111956"
-        input_cpf.set Faker::CPF.numeric
-        location_select.select("São Paulo")
-    end
+  def fill_form
+    input_name.set Faker::Name.first_name
+    input_email.set Faker::Internet.email
+    input_phone.set '11992176665'
+    input_birthday.set '19111956'
+    input_cpf.set Faker::CPF.numeric
+    location_select.select('São Paulo')
+  end
 
-    def fill_form_fail(user)
-        input_name.set user[:nome]
-        input_email.set user[:email]
-        input_phone.set user[:telefone]
-        input_birthday.set user[:nascimento ]
-        input_cpf.set user[:cpf]
-        location_select.select("#{user[:estado]}")
-    end
+  def fill_form_fail(user)
+    input_name.set user[:nome]
+    input_email.set user[:email]
+    input_phone.set user[:telefone]
+    input_birthday.set user[:nascimento]
+    input_cpf.set user[:cpf]
+    location_select.select("#{user[:estado]}")
+  end
 
-    def show_result
-        proposal_send.click
-    end
-end 
-
+  def show_result
+    proposal_send.click
+  end
+end
