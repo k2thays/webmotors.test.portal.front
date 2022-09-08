@@ -55,6 +55,9 @@ Style/MutableConstant:
 Layout/EmptyLineAfterGuardClause:
  Enabled: false
 
+Layout/EndOfLine:
+  Enabled: false
+
 Metrics/ClassLength:
   Enabled: false
 
@@ -68,4 +71,13 @@ Style/ClassVars:
   Enabled: false
 
 Style/GuardClause:
+  Enabled: false
+
+Layout/TrailingWhitespace:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/RedundantInterpolation:
   Enabled: false

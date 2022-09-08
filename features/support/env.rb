@@ -1,12 +1,13 @@
+require 'allure-cucumber'
 require 'capybara'
 require 'capybara/cucumber'
 require 'cpf_faker'
-require 'selenium-webdriver'
 require 'faker'
-require 'site_prism'
 require 'pry'
 require 'report_builder'
-require 'allure-cucumber'
+require 'rubocop'
+require 'selenium-webdriver'
+require 'site_prism'
 require_relative 'page_helper'
 
 World(PageObjects)
@@ -25,7 +26,7 @@ Capybara.register_driver :chrome do |app|
     options.add_argument '--start-maximized'
     options.add_argument 'user-agent="AUTOMATION-TESTING"'
   end
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
+  Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: chrome_options)
 end
 
 Capybara.configure do |config|
@@ -39,7 +40,7 @@ AllureCucumber.configure do |c|
   c.clean_results_directory = true
 end
 
-def take_screenshot(nome_arquivo, pasta)
+def take_screenshot(pasta, nome_arquivo)
   file_path = "./results/screenshots/#{pasta}"
   screenshot = "#{file_path}/#{nome_arquivo}.png"
   page.save_screenshot(screenshot)
