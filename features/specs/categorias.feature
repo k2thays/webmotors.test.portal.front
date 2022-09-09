@@ -7,17 +7,17 @@ Funcionalidade: Webmotors Web
   Quero conseguir navegar pelo site
 
   Contexto:
-    Dado que estou na home da webmotors
+  Dado que estou na home da webmotors
 
-  @categorias
+@categorias
+Cenário: Categorias
+  Eu como Usuario
+  Quero conseguir navegar pelo site
+
+  Contexto:
+  Dado que estou na home da webmotors
+
+@categorias
   Cenário: Categorias
-            Eu como Usuario
-    Quero conseguir navegar pelo site
-
-    Contexto:
-        Dado que estou na home da webmotors
-
-    @categorias
-    Cenário: Categorias
-    Quando seleciono uma das categorias
-    Então vejo a lista de veiculos da categoria selecionada
+  Quando seleciono uma das categorias
+  Então vejo a lista de veiculos da categoria selecionada

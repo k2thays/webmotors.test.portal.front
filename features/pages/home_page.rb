@@ -73,7 +73,7 @@ class HomePage < SitePrism::Page
   def pesquisar_veiculo(veiculo)
     input_busca.visible?
     input_busca.set(veiculo)
-    sleep(1)
+    lista_retorno_busca.visible?
     if lista_retorno_busca[0].text[0, 7] != 'Modelos'
       input_busca.send_keys :space
       wait_until_seleciona_retorno_busca_visible
