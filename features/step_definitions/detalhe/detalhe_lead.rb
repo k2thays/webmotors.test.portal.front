@@ -34,7 +34,6 @@ end
 
 Entao('exibe mensagem enviada com sucesso') do
   # Asserts de validação
-  sleep(1)
   expect(page).to have_text "Mensagem enviada\ncom sucesso!"
   take_screenshot('denuncia', 'mensagem_denuncia')
 end
