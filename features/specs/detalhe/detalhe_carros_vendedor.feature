@@ -1,3 +1,4 @@
+# encoding: utf-8
 # language: pt
 
 @portal @detalhe
@@ -7,10 +8,10 @@ Funcionalidade: Verificar anuncios de um mesmo vendedor
   Para escolher a melhor opção
 
   Contexto:
-      Dado que estou na home da webmotors
+    Dado que estou na home da webmotors
 
   @anuncios_vendedor
-  Esquema do Cenário: 
+  Cenário: 
     Quando verifico todos anuncios de um vendedor
     Entao sou redirecionado para a lista de anuncios
  

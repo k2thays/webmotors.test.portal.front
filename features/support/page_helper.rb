@@ -26,8 +26,24 @@ module PageObjects
   def installment
     Installment.new
   end
-  
+
   def description
     Description.new
+  end
+
+  def location
+    Location.new
+  end
+
+  def carfilters
+    CarFilters.new
+  end
+
+  def motofilters
+    MotoFilters.new
+  end
+
+  def latestsearch
+    LatestSearch.new
   end
 end
