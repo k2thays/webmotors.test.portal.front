@@ -39,7 +39,7 @@ pipeline {
             results: [[path: '/allure-results']]
           ])
         }
-        // sh """aws s3 cp  ${PWD}/workspace/$PROJECT_NAME/allure-report/history/history-trend.json s3://webmotors-integrated-tests/reports/PF/FRONT_PORTAL/history-trend.json"""
+         sh """aws s3 cp  ${PWD}/workspace/$PROJECT_NAME/allure-report/history/history-trend.json s3://webmotors-integrated-tests/reports/PF/FRONT_PORTAL/history-trend.json"""
       }
     }
   }
