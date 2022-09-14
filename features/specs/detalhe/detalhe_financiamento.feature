@@ -10,7 +10,7 @@ Funcionalidade: Validar simulação de financiamento
   Contexto:
     Dado que estou na home da webmotors
 
-  @financiamento @teste
+  @financiamento 
   Esquema do Cenário: Simular financiamento
       E faço a busca por um "<modelo>"
       E seleciono um anúncio
@@ -21,7 +21,7 @@ Funcionalidade: Validar simulação de financiamento
       | modelo |
       | Honda  |
 
-  @financiamento_sem_avisar @teste
+  @financiamento_sem_avisar 
   Esquema do Cenário: Simular financiamento sem avisar
       E faço a busca por um "<modelo>"
       E seleciono um anúncio
@@ -32,7 +32,7 @@ Funcionalidade: Validar simulação de financiamento
       | modelo |
       | Honda  |
 
-  @financiamento_falha @teste
+  @financiamento_falha 
   Esquema do Cenário: Simular financiamento
       E faço a busca por um "Honda"
       E seleciono um anúncio
