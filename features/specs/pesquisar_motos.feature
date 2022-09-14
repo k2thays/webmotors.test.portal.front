@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@portal
+@smoke
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero conseguir navegar pelo site
@@ -22,11 +22,11 @@ Funcionalidade: Webmotors Web
 
   @localizacao_moto
   Esquema do Cenário: Localizacao do veiculo
-    Quando que eu pesquiso um modelo da marca "Yamaha"
+    Quando que eu pesquiso um modelo da marca "Honda"
     E faço a busca pela região de <localizacao>
     Entao vejo a lista de motos disponível na região de <localizacao>
     Exemplos:
     | localizacao      |
     | 'Guarulhos'      |
     | 'Ribeirão Preto' |
-    | 'Osasco'         |
+    | 'São Paulo'      |

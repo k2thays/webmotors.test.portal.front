@@ -6,19 +6,21 @@ Dado('faço login como {string} e {string}') do |email, password|
   favorite.fill_login(email, password)
 end
 
-Quando('realizar a busca do carro {string}') do |modelos|    
+Quando('realizar a busca do carro {string}') do |modelos|
   home_page.pesquisar_veiculo(modelos)
-  expect(page).to have_text 'Novos e Usados'
+  # Remover autocompletar de localização
+  location.remove_locator
+  #expect(page).to have_text 'Novos e Usados'
 end
 
 Quando('seleciono um anúncio') do
   # Remover autocompletar de localização
-  favorite.remove_locator
+  location.remove_locator
   expect(page).to have_text 'Novos e Usados'
   # Escolhendo um item do catálogo e validação
   favorite.choose_item
   home_page.alterar_aba
-  expect(page).to have_text 'Sobre os diferenciais do anúncio'
+  expect(page).to have_text 'Sobre o vendedor'
 end
 
 Quando('desejo favoritar') do
@@ -39,11 +41,11 @@ Quando('realizo login como {string} e {string}') do |email, password|
   favorite.fill_login(email, password)
   expect(page).to have_text 'Novos e Usados'
   # Remover autocompletar de localização
-  favorite.remove_locator
+  location.remove_locator
   expect(page).to have_text 'Novos e Usados'
 end
 
-Quando('adiciono aos favoritos') do 
+Quando('adiciono aos favoritos') do
   # Verificar se o anuncio já estava favoritado e então favoritar
   favorite.list_fav_add
 end
@@ -51,9 +53,11 @@ end
 Entao('o anuncio é favoritado') do
   # Assert via css, dentro do item selecionado
   expect(page).to have_css '.VehicleDetails__header__top .sc-jzJRlG.iHAlVS'
+  take_screenshot('favoritado', 'carro_favorito')
 end
 
 Entao('vejo o anuncio favoritado') do
   # Assert após click de favorito
   expect(page).to have_css '.sc-gqPbQI.ldOiUz:nth-child(2) .sc-jzJRlG.dVKAHr'
+  take_screenshot('favoritado_listagem', 'lista_carros_favoritado')
 end

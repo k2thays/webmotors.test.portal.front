@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@portal @detalhe
+@smoke @detalhe
 Funcionalidade: Validar agendamento de chamada de video
   Eu como Usuario
   Quero agendar uma chamada de video

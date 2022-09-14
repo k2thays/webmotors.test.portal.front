@@ -35,7 +35,7 @@ end
 Capybara.configure do |config|
   config.default_driver = :chrome
   config.app_host = CONFIG['url_webmotor']
-  config.default_max_wait_time = 20
+  config.default_max_wait_time = 30
   Capybara.page.driver.browser.manage.window.maximize
 end
 

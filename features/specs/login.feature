@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@portal
+@smoke
 Funcionalidade: Webmotors Web
       Teste de login
 
@@ -10,5 +10,5 @@ Funcionalidade: Webmotors Web
 
   @login_fail
   Cenário: Tentar Logar
-    Quando eu tentar logar com usuário "teste@teste.com" e senha "123456789" inválidos
+    Quando eu tentar logar com usuário "teste@asdfteste.com" e senha "1234asdfas56789FAFAWF" inválidos
     Entao eu devo ver a mensagem de erro

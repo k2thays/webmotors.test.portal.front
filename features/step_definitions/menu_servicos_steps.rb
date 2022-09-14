@@ -37,5 +37,5 @@ Entao('devo ser direcionado para a area de {string}') do |menu_servico|
   when 'FazTudo'
     expect(page).to have_text ' pra você não fazer nada, só vender.'
   end
-  take_screenshot('menu_servicos')
+  take_screenshot('menu_servicos', 'servicos')
 end

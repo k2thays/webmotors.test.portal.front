@@ -1,23 +1,40 @@
-Dado('que estou na home da webmotors') do
-  visit('')
-  home_page.verificar_home
-  home_page.aceitar_coockies
-end
-
 Quando('que eu pesquise o veiculo {string}') do |veiculo_desejado|
   home_page.pesquisar_veiculo(veiculo_desejado)
 end
 
 Entao('deve retorna uma lista com os veiculos disponiveis') do
-  home_page.validar_retorno_busca
-  take_screenshot('lista_de_veiculos_disponiveis', 'exemplo_pasta1')
+  # Remover autocompletar de localização
+  location.remove_locator
+  home_page.validar_card_carros
+  take_screenshot('pesquisar_carro', 'lista_carros')
 end
 
 Quando('acessar o detalhe de um dos veiculos') do
-  home_page.acessar_detalhes_veiculo
+  # Remover autocompletar de localização
+  location.remove_locator
+  expect(page).to have_text 'Novos e Usados'
+  seller.choose_car
+  home_page.alterar_aba
 end
 
 Entao('devo visualizar os detalhes do veiculo') do
   description.validar_detalhes_veiculo
-  take_screenshot('lista_de_veiculos', 'exemplo_pasta2')
+  take_screenshot('detalhes_de_veiculos', 'detalhes')
+end
+
+Quando('que eu pesquiso um modelo do tipo {string}') do |modelo|
+  home_page.pesquisar_veiculo(modelo)
+end
+
+Quando('faço a busca pela região de {string}') do |regiao|
+  location.verificar_location
+  # Remover autocompletar de localização
+  location.remove_locator
+  home_page.carregar_lista_veiculos
+  location.fill_form(regiao)
+end
+
+Entao('vejo a lista disponível na região de {string}') do |regiao|
+  expect(page).to have_text "Honda em #{regiao}/SP"
+  take_screenshot('pesquisar_carro', 'lista_carros_localizacao')
 end
