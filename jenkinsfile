@@ -21,8 +21,9 @@ pipeline {
            docker run --rm --network host \
            -v ${PWD}/workspace/$PROJECT_NAME/allure-results:/$PROJECT_NAME/allure-results \
            -i $PROJECT_NAME \
-          cucumber headless=true -t @smoke
+           parallel_cucumber -n 4 -o 'headless=true -t @smoke'
         """
+        //cucumber headless=true -t @smoke
         }
       }
     }
