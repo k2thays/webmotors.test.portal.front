@@ -9,6 +9,7 @@ require 'rubocop'
 require 'selenium-webdriver'
 require 'site_prism'
 require_relative 'page_helper'
+require  'parallel_tests'
 
 World(PageObjects)
 Faker::Config.locale = 'pt-BR'
