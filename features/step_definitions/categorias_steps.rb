@@ -1,5 +1,6 @@
 Quando('seleciono uma das categorias') do
   home_page.categorias
+  # Remover autocompletar de localização
   location.remove_locator
 end
 

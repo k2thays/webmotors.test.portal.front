@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@portal @filtro_motos
+@pending @filtro_motos 
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero conseguir navegar pelo site

@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@portal @menus_vender
+@menus_vender
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero conseguir navegar pelo site
@@ -32,7 +32,7 @@ Funcionalidade: Webmotors Web
     | Gerenciar meu anúncio |
     #| FazTudo               | A página não carrega em modo teste
 
-  @menu_vender_logado
+  @pending @menu_vender_logado
   Esquema do Cenário: Estando Logado Acessar Menu Superior para Vender
     E faço login com "automacaoportal@gmail.com" e "Webmotors.2022"
     Quando quero acessar o "<menu>" superior para vender

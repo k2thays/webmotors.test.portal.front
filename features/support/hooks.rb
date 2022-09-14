@@ -1,19 +1,12 @@
-After do
-  puts 'Fechando Navegador'
-  Capybara.current_session.driver.quit
-end
+After do |scn|
+  image = page.save_screenshot("results/screenshots/#{scn.name}.png")
+  attach(image, 'image/png')
 
-at_exit do
-  time = Time.now.to_s
-  ReportBuilder.configure do |config|
-    config.json_path = 'results/report.json'
-    config.report_path = 'results/cucumber_relatorio'
-    config.report_types = [:html]
-    config.report_title = 'Report Builder - Testes automatizados em Web'
-    config.compress_images = false
-    config.color = 'indigo'
-    config.additional_info = { 'Project name' => 'Web WebMotors', 'Platform' => 'Web',
-                               'Report generated' => time }
-  end
-  ReportBuilder.build_report
+  Allure.add_attachment(
+    name: 'filename',
+    source: File.open("results/screenshots/#{scn.name}.png"),
+    type: Allure::ContentType::PNG,
+    test_case: true
+  )
+  Capybara.current_session.driver.quit
 end

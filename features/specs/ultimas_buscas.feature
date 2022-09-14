@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@portal @buscas
+@smoke @buscas
 Funcionalidade: Webmotors Web
 Como Usuario
 Quero poder de maneira pratica selecionar as buscas anteriores

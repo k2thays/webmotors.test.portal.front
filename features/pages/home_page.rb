@@ -6,14 +6,12 @@ class HomePage < SitePrism::Page
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
   element :card_cars, '.ContainerCardVehicle'
-  element :carlist_fav_unchecked, '.sc-gqPbQI.ldOiUz:nth-child(3) .sc-jzJRlG.iepUUL'
+  element :carlist_fav_unchecked, '.sc-bMVAic:nth-child(1) svg'
   element :moto_selector, '.NavBar--item:nth-child(2) > a'
   element :sell_option, :xpath, '//*[@class="NavBar--item"]//*[contains(text(), "Quero Vender")]'
-  element :categorie_option1, 'a[href*="carros-de-luxo"]'
-  element :categorie_option2, 'a[href*="carros-a-diesel"]'
-  element :categorie_option3, 'a[href*="carros-para-familia"]'
+  element :categorie_option, :xpath, '(//section[@id="home_categories_carousel"]/div/div/div/div/div/div/div/div/a)[1]'
   element :categories, '.bBNCJh .sc-jlyJG'
-  element :favorite_heart, '.sc-gqPbQI:nth-child(1) svg'
+  element :favorite_heart, '.sc-bMVAic:nth-child(1) svg'
 
   # Menu superior de Compra
   element :buy_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(1)'
@@ -73,8 +71,11 @@ class HomePage < SitePrism::Page
   def pesquisar_veiculo(veiculo)
     input_busca.visible?
     input_busca.set(veiculo)
-    lista_retorno_busca.visible?
     if lista_retorno_busca[0].text[0, 7] != 'Modelos'
+      input_busca.send_keys :space
+      input_busca.set(veiculo)
+      input_busca.send_keys :space
+      input_busca.set(veiculo)
       input_busca.send_keys :space
       wait_until_seleciona_retorno_busca_visible
     end
@@ -82,8 +83,8 @@ class HomePage < SitePrism::Page
   end
 
   def validar_card_carros
-    wait_until_carlist_fav_unchecked_visible
     wait_until_card_cars_visible
+    wait_until_carlist_fav_unchecked_visible
   end
 
   def validar_retorno_busca
@@ -107,9 +108,7 @@ class HomePage < SitePrism::Page
   end
 
   def categorias
-    categorie_option1.click if has_categorie_option1?(wait: 1)
-    categorie_option2.click if has_categorie_option2?(wait: 1)
-    categorie_option3.click if has_categorie_option3?(wait: 1)
+    categorie_option.click
   end
 
   def menu_comprar

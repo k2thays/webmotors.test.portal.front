@@ -28,14 +28,17 @@ class CarFilters < SitePrism::Page
   end
 
   def selecionar_marca_carro
+    brand_selector.visible?
     wait_until_brand_selector_visible
     brand_selector.click
   end
 
   def selecionar_modelo_carro
+    sleep(1)
     wait_until_all_model_selector_visible
     all_model_selector.click
     if wait_until_model_select_visible
+      sleep(1)
       model_select.click
       page.refresh
     end
@@ -100,13 +103,13 @@ class CarFilters < SitePrism::Page
   end
 
   def preencher_ano
-    from_year_field.set '2017'
+    from_year_field.set '2005'
     to_year_field.set '2021'
   end
 
   def preencher_preco
-    from_pricer.set '90000'
-    to_pricer.set '130000'
+    from_pricer.set '10000'
+    to_pricer.set '250000'
   end
 
   def selecionar_final_placa

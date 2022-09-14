@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@portal @menus
+@menus
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero navegar menu superior
@@ -19,7 +19,7 @@ Funcionalidade: Webmotors Web
     | Para Você       |
     | Para a sua Loja |
 
-  @menu_ajuda_logado
+  @pending @menu_ajuda_logado
   Esquema do Cenário: Menu Ajuda
     E faço login com "automacaoportal@gmail.com" e "Webmotors.2022"
     Quando quero acessar o menu "<ajuda>"

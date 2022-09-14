@@ -25,5 +25,5 @@ Entao('sou redirecionado para a página do {string} escolhido') do |menu_vender|
   when 'FazTudo'
     expect(page).to have_text 'Quer vender seu carro e não se preocupar com nada?'
   end
-  take_screenshot('menu_vender')
+  take_screenshot('menu_vender', 'menu_vender')
 end
