@@ -8,7 +8,7 @@ pipeline {
     stage('Docker build') {
       steps {
         sh """
-          docker build -t $PROJECT_NAME . -f Dockerfile
+          docker build --no-cache -t $PROJECT_NAME . -f Dockerfile
         """
       }
     }
@@ -39,7 +39,20 @@ pipeline {
             results: [[path: '/allure-results']]
           ])
         }
-         sh """aws s3 cp  ${PWD}/workspace/$PROJECT_NAME/allure-report/history/history-trend.json s3://webmotors-integrated-tests/reports/PF/FRONT_PORTAL/history-trend.json"""
+      }
+    }
+    
+    stage('Dashboard') {
+      steps {
+        sh """aws s3 cp  ${PWD}/workspace/$PROJECT_NAME/allure-report/history/history-trend.json s3://webmotors-integrated-tests/reports/PF/FRONT_PORTAL/history-trend.json"""
+      }
+    }
+
+    stage('Clean Image') {
+      steps {
+        sh """
+          docker rmi $PROJECT_NAME
+        """
       }
     }
   }
