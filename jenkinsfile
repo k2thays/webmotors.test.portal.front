@@ -1,0 +1,59 @@
+pipeline {
+  agent { node ('jenkins-qa-plugin-slave') } 
+  
+  environment { PROJECT_NAME = "webmotors.portal_front_test" }
+  
+  stages{ 
+  
+    stage('Docker build') {
+      steps {
+        sh """
+          docker build --no-cache -t $PROJECT_NAME . -f Dockerfile
+        """
+      }
+    }
+  
+    stage('Test: QA Front') {
+      steps {
+        catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+        echo 'Execuntado os testes automatizados'
+        sh """
+           docker run --rm --network host \
+           -v ${PWD}/workspace/$PROJECT_NAME/allure-results:/$PROJECT_NAME/allure-results \
+           -i $PROJECT_NAME \
+           parallel_cucumber -n 2 -o 'headless=true -t @smoke'
+        """
+        //cucumber headless=true -t @smoke
+        }
+      }
+    }
+  
+    stage('Quality Gate - Report') {
+      steps {
+        script {
+          allure([
+            includeProperties: false,
+            jdk: '',
+            properties: [],
+            reportBuildPolicy: 'ALWAYS',
+            results: [[path: '/allure-results']]
+          ])
+        }
+      }
+    }
+    
+    stage('Dashboard') {
+      steps {
+        sh """aws s3 cp  ${PWD}/workspace/$PROJECT_NAME/allure-report/history/history-trend.json s3://webmotors-integrated-tests/reports/PF/FRONT_PORTAL/history-trend.json"""
+      }
+    }
+
+    stage('Clean Image') {
+      steps {
+        sh """
+          docker rmi $PROJECT_NAME
+        """
+      }
+    }
+  }
+}

@@ -33,9 +33,9 @@
 	```
 
 ### Executar Testes
-  O comando cucumber permite executar uma série de funções que podem ser informadas pelo comando “cucumber -help”, o argumento “-t” significa que iremos passar uma tag por parâmetro e “@portal” é a tag que será executada, pois foi informada na escrita da feature.
+  O comando cucumber permite executar uma série de funções que podem ser informadas pelo comando “cucumber -help”, o argumento “-t” significa que iremos passar uma tag por parâmetro e “@smoke” é a tag que será executada, pois foi informada na escrita da feature.
   ```
-	$ cucumber -t @TagCenariosr -t @portal”
+	$ cucumber -t @TagCenariosr -t @smoke”
 	```
 
 ## Equipe
