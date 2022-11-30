@@ -1,6 +1,6 @@
 class HomePage < SitePrism::Page
   # Header da página
-  element :logo, '#logoHomeWebmotors'
+  element :logo, '._IVZOj'
   element :input_busca, '#searchBar'
   element :seleciona_retorno_busca, '.SearchBar__results__group:nth-child(1) .SearchBar__results__result__name'
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
