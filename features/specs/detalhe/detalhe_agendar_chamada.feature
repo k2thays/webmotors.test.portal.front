@@ -10,7 +10,7 @@ Funcionalidade: Validar agendamento de chamada de video
   Contexto:
     Dado que estou na home da webmotors
 
-  @agendar_chamada_video
+  @agendar_chamada_video @corrigido
   Esquema do Cenário: Validar agendamento de chamada de video
     Quando desejo agendar uma video chamada
     E informo o "<Nome>", "<Email>" e "<Telefone>" para agendar
@@ -20,7 +20,7 @@ Funcionalidade: Validar agendamento de chamada de video
     | Nome | Email         | Telefone    |
     | Ana  | ana@gmail.com | 14999999999 |
 
-  @agendar_chamada_video_fail
+  @agendar_chamada_video_fail @corrigido
   Esquema do Cenário: Validar agendamento de chamada de video dados invalidos
     Quando desejo agendar uma video chamada
     E informo o "<Nome>", "<Email>" e "<Telefone>" para agendar
