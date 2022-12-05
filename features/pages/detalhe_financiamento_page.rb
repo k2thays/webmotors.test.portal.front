@@ -6,6 +6,7 @@ class Installment < SitePrism::Page
   element :input_cpf, 'form[class="Forms__container"] input[name="cpf"]'
   element :location_select, '.Form__field.Form__field--select'
   element :proposal_send, 'button[data-qa="btnSendProposalFinancing"]'
+  element :input_valor, 'input[data-qa="inputIntakeFinancing"]'
  
   def fill_form
     input_name.set Faker::Name.first_name
