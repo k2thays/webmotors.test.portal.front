@@ -15,9 +15,9 @@ Funcionalidade: Webmotors Web
     Quando quero acessar o menu "<ajuda>"
     Entao devo ser direcionado para a página de "<ajuda>"
     Exemplos:
-    | ajuda           |
-    | Para Você       |
-    | Para a sua Loja |
+    | ajuda         |
+    | Para Você     |
+    | Para sua Loja |
 
   @pending @menu_ajuda_logado
   Esquema do Cenário: Menu Ajuda
