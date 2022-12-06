@@ -8,11 +8,11 @@ class Installment < SitePrism::Page
   element :proposal_send, '.Forms__footer > #ButtonSendProposal'
 
   def fill_form
-    input_name.set Faker::Name.first_name
+    input_name.set "Breno Lopes"
     input_email.set Faker::Internet.email
     input_phone.set '11992176665'
     input_birthday.set '19111956'
-    input_cpf.set Faker::CPF.numeric
+    input_cpf.set "32523509806"
     location_select.select('São Paulo')
   end
 

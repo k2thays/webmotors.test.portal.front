@@ -40,7 +40,7 @@
 
 ## Equipe
 
-- Thayla
+- Thays
 
 ## FAQ
 

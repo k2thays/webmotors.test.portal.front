@@ -1,8 +1,8 @@
 class HomePage < SitePrism::Page
   # Header da página
-  element :logo, '#logoHomeWebmotors'
-  element :input_busca, '#searchBar'
-  element :seleciona_retorno_busca, '.SearchBar__results__group:nth-child(1) .SearchBar__results__result__name'
+  element :logo, '._IVZOj'
+  element :input_busca, :xpath, '//*[@data-qa="Input_Autocomplete"]'
+  elements :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplte_DropItem_Model"]'
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
   element :card_cars, '.ContainerCardVehicle'
@@ -31,9 +31,9 @@ class HomePage < SitePrism::Page
   element :upper_sell_faztudo, '#navigationFazTudo'
 
   # Menu Superior de Ajuda
-  element :upper_help, '.Menu-User__list-links__navigation__item:nth-child(4)'
-  element :upper_foryou, '#navigationAttendance'
-  element :upper_forstore, '#navigationLegalPerson'
+  element :upper_help, :xpath, '//*[@data-qa="header_help"]'
+  element :upper_foryou, :xpath, '//*[@data-qa="header_help_you"]'
+  element :upper_forstore, :xpath, '//*[@data-qa="header_help_store"]'
 
   # Menu Superior de Serviços
   element :services_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(3)'
@@ -71,15 +71,15 @@ class HomePage < SitePrism::Page
   def pesquisar_veiculo(veiculo)
     input_busca.visible?
     input_busca.set(veiculo)
-    if lista_retorno_busca[0].text[0, 7] != 'Modelos'
-      input_busca.send_keys :space
-      input_busca.set(veiculo)
-      input_busca.send_keys :space
-      input_busca.set(veiculo)
-      input_busca.send_keys :space
-      wait_until_seleciona_retorno_busca_visible
-    end
-    seleciona_retorno_busca.click
+    #if lista_retorno_busca[0].text[0, 7] != 'Modelos'
+      #input_busca.send_keys :space
+      #input_busca.set(veiculo)
+      #input_busca.send_keys :space
+      #input_busca.set(veiculo)
+      #input_busca.send_keys :space
+      #wait_until_seleciona_retorno_busca_visible
+    #end
+    seleciona_retorno_busca[0].click
   end
 
   def validar_card_carros
