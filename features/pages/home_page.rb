@@ -31,9 +31,9 @@ class HomePage < SitePrism::Page
   element :upper_sell_faztudo, '#navigationFazTudo'
 
   # Menu Superior de Ajuda
-  element :upper_help, '.Menu-User__list-links__navigation__item:nth-child(4)'
-  element :upper_foryou, '#navigationAttendance'
-  element :upper_forstore, '#navigationLegalPerson'
+  element :upper_help, :xpath, '//*[@data-qa="header_help"]'
+  element :upper_foryou, :xpath, '//*[@data-qa="header_help_you"]'
+  element :upper_forstore, :xpath, '//*[@data-qa="header_help_store"]'
 
   # Menu Superior de Serviços
   element :services_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(3)'
