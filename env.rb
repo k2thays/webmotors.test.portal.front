@@ -19,15 +19,15 @@ Selenium::WebDriver::Chrome::Service.driver_path = './chromedriver.exe'
 
 Capybara.register_driver :chrome do |app|
   chrome_options = Selenium::WebDriver::Chrome::Options.new.tap do |options|
-    # options.add_argument '--disable-gpu'
-    # options.add_argument '--no-sandbox'
-    # options.add_argument '--disable-site-isolation-trials'
-    # options.add_argument '--start-maximized'
-    # options.add_argument 'user-agent="AUTOMATION-TESTING"'
-    # options = webdriver.ChromeOptions()
+    options.add_argument '--disable-gpu'
+    options.add_argument '--no-sandbox'
+    options.add_argument '--disable-site-isolation-trials'
+    options.add_argument '--start-maximized'
+    options.add_argument 'user-agent="AUTOMATION-TESTING"'
+    options = webdriver.ChromeOptions()
     options.add_argument '--excludeSwitches'
     options.add_argument '--enable-logging'
-    # driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options)
   end
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
 end

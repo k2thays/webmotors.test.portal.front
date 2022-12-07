@@ -18,7 +18,7 @@ Entao('devo ser direcionado para a página de {string}') do |menu_ajuda|
     take_screenshot('menu_ajuda', 'ajuda_para_voce')
 
   when 'Para a sua Loja'
-    expect(page).to have_text 'Central de ajuda Cockpit'
+    expect(page).to have_text 'Central Cockpit'
     take_screenshot('menu_ajuda', 'ajuda_para_sua_loja')
   end
 end

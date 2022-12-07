@@ -5,8 +5,8 @@ class HomePage < SitePrism::Page
   elements :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplte_DropItem_Model"]'
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
-  element :card_cars, '.ContainerCardVehicle'
-  element :carlist_fav_unchecked, '.sc-bMVAic:nth-child(1) svg'
+  element :card_cars, '.sc-daURTG.hOmCb'
+  element :fav_unchecked_carlist,  '.sc-hEsumM.hiCjMu'
   element :moto_selector, '.NavBar--item:nth-child(2) > a'
   element :sell_option, :xpath, '//*[@class="NavBar--item"]//*[contains(text(), "Quero Vender")]'
   element :categorie_option, :xpath, '(//section[@id="home_categories_carousel"]/div/div/div/div/div/div/div/div/a)[1]'
@@ -14,12 +14,12 @@ class HomePage < SitePrism::Page
   element :favorite_heart, '.sc-bMVAic:nth-child(1) svg'
 
   # Menu superior de Compra
-  element :buy_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(1)'
-  element :upper_new_and_used_car, '#navigationUsedOrNewCars'
-  element :upper_new_car, '#navigationNewCars'
-  element :upper_new_and_used_bikes, '#navigationUsedOrNewMotorbikes'
-  element :upper_new_bikes, '#navigationNewMotorsbike'
-  element :upper_advanced_search, '#navigationSearchAdvanced'
+  element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
+  element :upper_used_car, :xpath, '//*[@data-qa="header_buy_car_used"]'
+  element :upper_new_car, :xpath, '//*[@data-qa="header_buy_car_new"]'
+  element :upper_used_bikes, :xpath, '//*[@data-qa="header_buy_bike_used"]'
+  element :upper_new_bikes, :xpath, '//*[@data-qa="header_buy_bike_new"]'
+  element :upper_buy_certified, :xpath, '//*[@data-qa="header_buy_certified_purchase"]'
   element :upper_buy_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(2) > #navigationSafeBuy'
 
   # Menu Superior de Venda
@@ -84,7 +84,7 @@ class HomePage < SitePrism::Page
 
   def validar_card_carros
     wait_until_card_cars_visible
-    wait_until_carlist_fav_unchecked_visible
+    wait_until_fav_unchecked_carlist_visible
   end
 
   def validar_retorno_busca
@@ -115,24 +115,24 @@ class HomePage < SitePrism::Page
     buy_upper_menu.hover
   end
 
-  def menu_carros_novos_usados
-    upper_new_and_used_car.click
+  def menu_carros_usados
+    upper_used_car.click
   end
 
   def menu_carros_novos
     upper_new_car.click
   end
 
-  def menu_motos_novas_usadas
-    upper_new_and_used_bikes.click
+  def menu_motos_usadas
+    upper_used_bikes.click
   end
 
   def menu_motos_novas
     upper_new_bikes.click
   end
 
-  def menu_busca_avancada
-    upper_advanced_search.click
+  def menu_compra_certificada
+    upper_buy_certified.click
   end
 
   def menu_compra_segura
