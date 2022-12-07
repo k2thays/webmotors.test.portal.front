@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@menu1
+@smoke
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero navegar menu superior
