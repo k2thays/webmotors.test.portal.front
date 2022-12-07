@@ -47,9 +47,10 @@ class HomePage < SitePrism::Page
   element :upper_services_faztudo, '#navigationServicesFazTudo'
 
   # Menu Superior de Login
-  element :login_upper_menu, '.Menu-User__login'
-  element :upper_login, '#userLoginRegister'
-  element :upper__login_dealer, '#navigationImAReseller'
+  element :login_upper_menu, :xpath, '//*[@data-qa="btn_header_login"]'
+  element :upper_login, :xpath, '//*[@data-qa="header_btn_login"]'
+  element :upper__login_dealer, :xpath, '//*[@data-qa="header_btn_cockpit"]'
+  element :closed_modal_login,  :xpath, '//*[@data-qa="login-popover-close-btn"]'
 
   # Menu Superior de Notificações
   element :notification_upper_menu, '.Header-Notifications__icon'
@@ -212,6 +213,8 @@ class HomePage < SitePrism::Page
   end
 
   def menu_login
+    wait_until_closed_modal_login_visible
+    closed_modal_login.click  
     login_upper_menu.hover
   end
 
