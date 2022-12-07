@@ -40,3 +40,4 @@ podTemplate(inheritFrom: 'agent-ruby') {
             }
         }
     }
+}
