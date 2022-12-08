@@ -36,15 +36,13 @@ class HomePage < SitePrism::Page
   element :upper_forstore, :xpath, '//*[@data-qa="header_help_store"]'
 
   # Menu Superior de Serviços
-  element :services_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(3)'
-  element :upper_fipe, '#navigationFipe'
-  element :upper_zerokm, '#navigationKM'
-  element :upper_assurance, '#navigationSafe'
-  element :upper_dealers, '#navigationDealer'
-  element :upper_financial, '#navigationFinancing'
-  element :upper_newswm, '#navigationNewsWM1'
-  element :upper_services_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(6) > #navigationSafeBuy'
-  element :upper_services_faztudo, '#navigationServicesFazTudo'
+  element :services_upper_menu, :xpath, '//*[@data-qa="header_services"]'
+  element :upper_fipe, :xpath, '//*[@data-qa="header_services_fipe"]'
+  element :upper_zerokm, :xpath, '//*[@data-qa="header_services_catalog_0km"]'
+  element :upper_assurance, :xpath, '//*[@data-qa="header_services_insurance"]'
+  element :upper_dealers,  :xpath, '//*[@data-qa="header_services_dealer_platform"]'
+  element :upper_financial, :xpath, '//*[@data-qa="header_services_financing"]'
+  element :upper_buy_certificada, :xpath, '//*[@data-qa="header_services_certified_purchase"]'
 
   # Menu Superior de Login
   element :login_upper_menu, :xpath, '//*[@data-qa="btn_header_login"]'
@@ -201,7 +199,7 @@ class HomePage < SitePrism::Page
   end
 
   def servicos_noticiaswm
-    upper_newswm.click
+    upper_buy_certificada.click
   end
 
   def servicos_compra_segura
