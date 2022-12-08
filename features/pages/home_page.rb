@@ -53,8 +53,8 @@ class HomePage < SitePrism::Page
   element :closed_modal_login,  :xpath, '//*[@data-qa="login-popover-close-btn"]'
 
   # Menu Superior de Notificações
-  element :notification_upper_menu, '.Header-Notifications__icon'
-  element :notifications, '.Header-Notifications__list__item__text > div:nth-child(1)'
+  element :notification_upper_menu, :xpath, '//*[@data-qa="btn_header_notifications"]'
+  element :notifications, '#btn_popover_callModalNotifications'
 
   # Retorno da busca
   element :fechar_modal, '.modal--close'
@@ -227,7 +227,7 @@ class HomePage < SitePrism::Page
   end
 
   def menu_notificacoes
-    notification_upper_menu.hover
+    notification_upper_menu.click
   end
 
   def notificacao_slide
