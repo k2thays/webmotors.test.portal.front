@@ -13,7 +13,8 @@ Quando('decido não avisar') do
   installment.show_result
 end
 
-Entao('deve #VERIFICAR RESULTADO DO FINANCIMANETO EM HOMOLOGAÇÃO') do
+Entao('devo visualizar as condições oferecidas') do
+  installment.input_valor.visible?
 end
 
 Quando('não preencho todos os campos') do |table|

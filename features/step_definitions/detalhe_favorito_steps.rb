@@ -39,10 +39,8 @@ Quando('realizo login como {string} e {string}') do |email, password|
   # preenchimento dos campos de login
   expect(page).to have_text "Digite o seu\ne-mail e senha"
   favorite.fill_login(email, password)
-  expect(page).to have_text 'Novos e Usados'
   # Remover autocompletar de localização
   location.remove_locator
-  expect(page).to have_text 'Novos e Usados'
 end
 
 Quando('adiciono aos favoritos') do

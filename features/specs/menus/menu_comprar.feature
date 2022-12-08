@@ -12,13 +12,12 @@ Funcionalidade: Webmotors Web
 
   @menu_comprar
   Esquema do Cenário: Menu Comprar
-    Quando quero acessar o "<menu>" superior para comprar
+    Quando acessar o "<menu>" superior para comprar
     Entao deve retorna uma lista com os veiculos disponiveis "<menu>"
     Exemplos:
-    | menu                      |
-    | Carros Usados e Seminovos |
-    | Carros Novos              |
-    | Motos Usadas e seminovas  |
-    | Motos Novas               |
-    | Busca Avançada            |
-    #| Autopago                | Tomando erro 404
+    | menu               |
+    | Carros usados      |
+    | Carros novos       |
+    | Motos usadas       |
+    | Motos novas        |
+    | Compra certificada |

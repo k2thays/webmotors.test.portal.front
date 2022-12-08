@@ -1,0 +1,44 @@
+podTemplate(inheritFrom: 'agent-ruby') {
+    node(POD_LABEL) {
+        container('agent-ruby') {
+            withAWS(roleAccount:'arn:aws:iam::533642024049:role/role-eks-node-group-jenkins', 
+                role:'arn:aws:iam::900266424485:role/role-jenkins-conta-raiz') {
+                stage ('Setting vars') {
+                    workspacesFolder = pwd()
+                }
+
+                stage ('Git pull') {
+                  checkout scm
+                }
+                
+                stage('Test: QA Front') {
+                  catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    echo 'Execuntado os testes automatizados'
+                    sh """
+                        gem install bundler && bundle install
+                        ruby webdrivers.rb
+                        cucumber headless=true -t @smoke
+                      """
+                      //parallel_cucumber -n 2 -o 'headless=true -t @smoke'
+                  }
+                }
+
+                stage('Quality Gate - Report') {
+                  script {
+                      allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: '/allure-results']]
+                      ])
+                    }
+                }
+
+                stage('Dashboard') {
+                  sh """aws s3 cp ${workspacesFolder}/allure-report/history/history-trend.json s3://webmotors-integrated-tests/reports/PJ/FRONT_CRM/history-trend.json"""
+                }
+            }
+        }
+    }
+}

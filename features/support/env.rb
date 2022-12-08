@@ -28,7 +28,7 @@ if ENV['headless']
       options.add_argument '--window-size=1280,1280'
       options.add_argument '--disable-site-isolation-trials'
       options.add_argument '--disable-dev-shm-usage'
-      options.add_argument 'user-agent="AUTOMATION-TESTING"'
+      options.add_argument 'user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"'
     end
     Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: chrome_headless_options)
   end
@@ -43,7 +43,7 @@ else
       options.add_argument '--window-size=1280,1280'
       options.add_argument '--disable-site-isolation-trials'
       options.add_argument '--start-maximized'
-      options.add_argument 'user-agent="AUTOMATION-TESTING"'
+      options.add_argument 'user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"'
     end
     Capybara::Selenium::Driver.new(app, browser: :chrome, capabilities: chrome_options)
   end

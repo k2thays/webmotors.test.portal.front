@@ -65,5 +65,3 @@ Funcionalidade: Validar envio lead
     Exemplos:
     | modelo |
     | Honda  |
-
-  #denuncia: validar formulario completo
