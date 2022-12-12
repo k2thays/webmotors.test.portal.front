@@ -10,20 +10,35 @@ end
 
 Entao('sou redirecionado para a página do {string} escolhido') do |menu_vender|
   case menu_vender
-  when 'Vender meu veículo'
+  when 'Vender carro'
     expect(page).to have_text 'Anuncie e venda seu carro pelo melhor preço'
 
-  when 'Vender minha moto'
+  when 'Vender moto'
     expect(page).to have_text 'Anuncie e venda sua moto pelo melhor preço'
 
-  when 'Autopago'
-    expect(page).to have_text 'Segurança para comprar e vender.'
-
   when 'Gerenciar meu anúncio'
-    expect(page).to have_text "Digite o seu\ne-mail e senha"
+    expect(page).to have_text 'Digite o seu'
 
-  when 'FazTudo'
-    expect(page).to have_text 'Quer vender seu carro e não se preocupar com nada?'
+  when 'Plataforma revendedores'
+    expect(page).to have_text "Você no comando do seu negócio."
   end
   take_screenshot('menu_vender', 'menu_vender')
 end
+
+Entao('sou redirecionado para a página do {string} escolhido logado') do |menu_vender|
+  case menu_vender
+  when 'Vender carro'
+    expect(page).to have_text 'Vamos começar seu anúncio?'
+
+  when 'Vender moto'
+    expect(page).to have_text 'Vamos começar seu anúncio?'
+
+  when 'Gerenciar meu anúncio'
+    expect(page).to have_text 'Meus Anúncios'
+
+  when 'Plataforma revendedores'
+    expect(page).to have_text "Você no comando do seu negócio."
+  end
+  take_screenshot('menu_vender', 'menu_vender')
+end
+

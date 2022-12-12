@@ -7,8 +7,9 @@ class HomePage < SitePrism::Page
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
   element :card_cars, '.sc-daURTG.hOmCb'
   element :fav_unchecked_carlist,  '.sc-hEsumM.hiCjMu'
-  element :moto_selector, '.NavBar--item:nth-child(2) > a'
-  element :sell_option, :xpath, '//*[@class="NavBar--item"]//*[contains(text(), "Quero Vender")]'
+  element :sell_bike, :xpath, '//*[@data-qa="Tabs_Bikes"]'
+  elements :sell_option, '.sc-gYMRRK.kjzrDR'
+  element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]'
   element :categorie_option, :xpath, '(//section[@id="home_categories_carousel"]/div/div/div/div/div/div/div/div/a)[1]'
   element :categories, '.bBNCJh .sc-jlyJG'
   element :favorite_heart, '.sc-bMVAic:nth-child(1) svg'
@@ -23,12 +24,11 @@ class HomePage < SitePrism::Page
   element :upper_buy_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(2) > #navigationSafeBuy'
 
   # Menu Superior de Venda
-  element :sell_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(2)'
-  element :upper_sellmy_car, '#navigationSellMyCar'
-  element :upper_sellmy_bike, '#navigationSellMyBike'
-  element :upper_sell_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(3) > #navigationSafeBuy'
-  element :upper_manage_advertising, '#navigationManageAdvertising'
-  element :upper_sell_faztudo, '#navigationFazTudo'
+  element :sell_upper_menu, :xpath, '//*[@data-qa="header_sell"]'
+  element :upper_sellmy_car, :xpath, '//*[@data-qa="header_sell_car"]'
+  element :upper_sellmy_bike, :xpath, '//*[@data-qa="header_sell_bike"]'
+  element :upper_manage_advertising, :xpath, '//*[@data-qa="header_sell_manage_ad"]'
+  element :upper_sell_dealer_platform, :xpath, '//*[@data-qa="header_sell_dealer_platform"]'
 
   # Menu Superior de Ajuda
   element :upper_help, :xpath, '//*[@data-qa="header_help"]'
@@ -98,13 +98,17 @@ class HomePage < SitePrism::Page
     page.refresh
   end
 
-  def comprar_motos
-    moto_selector.click
+  def vender_motos
+    sell_option.click
   end
 
   def quero_vender
-    sell_option.click
+    sell_option[0].click
   end
+
+  def comprar_motos
+    sell_bike.click
+  end  
 
   def categorias
     categorie_option.click
@@ -158,8 +162,8 @@ class HomePage < SitePrism::Page
     upper_manage_advertising.click
   end
 
-  def venda_faztudo
-    upper_sell_faztudo.click
+  def venda_revendedores
+    upper_sell_dealer_platform.click
   end
 
   def menu_ajuda
@@ -181,6 +185,10 @@ class HomePage < SitePrism::Page
   def servicos_fipe
     upper_fipe.click
   end
+
+  def plataforma_rev
+    upper_sell_dealer_platform.click
+  end 
 
   def servicos_zerokm
     upper_zerokm.click

@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@menus_vender
+@smoke
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero conseguir navegar pelo site
@@ -25,22 +25,21 @@ Funcionalidade: Webmotors Web
     Quando quero acessar o "<menu>" superior para vender
     Entao sou redirecionado para a página do "<menu>" escolhido
     Exemplos:
-    | menu                  |
-    | Vender meu veículo    |
-    | Vender minha moto     |
-    #| Autopago                | Tomando erro 404
-    | Gerenciar meu anúncio |
-    #| FazTudo               | A página não carrega em modo teste
+    | menu                    |
+    | Vender carro            |
+    | Vender moto             |
+    | Gerenciar meu anúncio   |
+    | Plataforma revendedores |
 
-  @pending @menu_vender_logado
+  @menu_vender_logado
   Esquema do Cenário: Estando Logado Acessar Menu Superior para Vender
-    E faço login com "automacaoportal@gmail.com" e "Webmotors.2022"
+    E faço login com "albin@putsbox.com" e "@TesteQA1"
     Quando quero acessar o "<menu>" superior para vender
-    Entao sou redirecionado para a página do "<menu>" escolhido
+    Entao sou redirecionado para a página do "<menu>" escolhido logado
     Exemplos:
-    | menu                  |
-    | Vender meu veículo    |
-    | Vender minha moto     |
-    #| Autopago                | Tomando erro 404
-    | Gerenciar meu anúncio |
-    #| FazTudo               | A página não carrega em modo teste
+    Exemplos:
+    | menu                    |
+    | Vender carro            |
+    | Vender moto             |
+    | Gerenciar meu anúncio   |
+    | Plataforma revendedores |

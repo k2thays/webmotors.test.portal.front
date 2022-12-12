@@ -21,11 +21,10 @@ end
 
 Quando('quero acessar o {string} superior para vender') do |menu_vender|
   home_page.menu_vender
-  home_page.vender_carro if menu_vender.eql?('Vender meu veículo')
-  home_page.vender_moto if menu_vender.eql?('Vender minha moto')
-  home_page.venda_compra_segura if menu_vender.eql?('Autopago')
+  home_page.vender_carro if menu_vender.eql?('Vender carro')
+  home_page.vender_moto if menu_vender.eql?('Vender moto')
   home_page.gerenciar_anuncio if menu_vender.eql?('Gerenciar meu anúncio')
-  home_page.venda_faztudo if menu_vender.eql?('FazTudo')
+  home_page.plataforma_rev if menu_vender.eql?('Plataforma revendedores')
   home_page.alterar_aba
   
 end
