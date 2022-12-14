@@ -2,15 +2,15 @@ class HomePage < SitePrism::Page
   # Header da página
   element :logo, '._IVZOj'
   element :input_busca, :xpath, '//*[@data-qa="Input_Autocomplete"]'
-  elements :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplte_DropItem_Model"]'
+  elements :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplte_DropItem_Brand"]'
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
   element :card_cars, '.sc-daURTG.hOmCb'
   element :fav_unchecked_carlist,  '.sc-hEsumM.hiCjMu'
   element :sell_bike, :xpath, '//*[@data-qa="Tabs_Bikes"]'
   elements :sell_option, '.sc-gYMRRK.kjzrDR'
-  element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]'
-  element :categorie_option, :xpath, '(//section[@id="home_categories_carousel"]/div/div/div/div/div/div/div/div/a)[1]'
+  element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
+  elements :categorie_option, :xpath, '//*[@data-testid="Card_1"]'
   element :categories, '.bBNCJh .sc-jlyJG'
   element :favorite_heart, '.sc-bMVAic:nth-child(1) svg'
 
@@ -60,6 +60,7 @@ class HomePage < SitePrism::Page
 
   # MOTODOS
   def verificar_home
+    wait_until_logo_visible
     logo.visible?
   end
 
@@ -78,6 +79,7 @@ class HomePage < SitePrism::Page
       #input_busca.send_keys :space
       #wait_until_seleciona_retorno_busca_visible
     #end
+    wait_until_seleciona_retorno_busca_visible
     seleciona_retorno_busca[0].click
   end
 
@@ -111,7 +113,7 @@ class HomePage < SitePrism::Page
   end  
 
   def categorias
-    categorie_option.click
+    categorie_option[0].click
   end
 
   def menu_comprar

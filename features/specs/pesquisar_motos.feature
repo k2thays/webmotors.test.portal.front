@@ -16,7 +16,7 @@ Funcionalidade: Webmotors Web
     Entao deve retorna uma lista com as motos disponiveis
     Exemplos:
     |  modelo     |
-    | 'Honda '    |
+    | 'Honda'     |
     | 'Yamaha'    |
     | 'Kawasaki ' |
 
