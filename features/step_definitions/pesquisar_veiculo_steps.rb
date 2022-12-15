@@ -34,6 +34,6 @@ Quando('faço a busca pela região de {string}') do |regiao|
 end
 
 Entao('vejo a lista disponível na região de {string}') do |regiao|
-  expect(page).to have_text "Motos Honda Novas e Usadas em #{regiao}/SP"
+  expect(page).to have_text "#{regiao}/SP"
   take_screenshot('pesquisar_carro', 'lista_carros_localizacao')
 end
