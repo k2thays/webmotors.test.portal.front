@@ -30,11 +30,10 @@ Quando('faço a busca pela região de {string}') do |regiao|
   location.verificar_location
   # Remover autocompletar de localização
   location.remove_locator
-  home_page.carregar_lista_veiculos
   location.fill_form(regiao)
 end
 
 Entao('vejo a lista disponível na região de {string}') do |regiao|
-  expect(page).to have_text "Honda em #{regiao}/SP"
+  expect(page).to have_text "Motos Honda Novas e Usadas em #{regiao}/SP"
   take_screenshot('pesquisar_carro', 'lista_carros_localizacao')
 end
