@@ -2,7 +2,7 @@ class CarFilters < SitePrism::Page
   element :click_offerts, '.Button--red-home'
   element :upper_tittle, '.title-search'
   element :filter_validate, 'label[data-testid="filter_Opportunities_superPreco"]'
-  element :brand_selector, 'div[class*="CarouselContainer"] a[title="honda"]'
+  elements :brand_selector, '.CardMake'
   element :all_model_selector, '.Filters__line--gray'
   element :model_select, 'a[class*="Filters__line"][href*="civic"]'
   element :version_select, 'a[class*="Filters__line"][href*="20-exr-16v-flex-4p-automatico"]'
@@ -30,7 +30,7 @@ class CarFilters < SitePrism::Page
   def selecionar_marca_carro
     brand_selector.visible?
     wait_until_brand_selector_visible
-    brand_selector.click
+    brand_selector[3].click
   end
 
   def selecionar_modelo_carro
@@ -73,7 +73,7 @@ class CarFilters < SitePrism::Page
   end
 
   def oferta_carros
-    click_offerts.click
+    click_link "Ver ofertas"
   end
 
   def validar_page_filtros

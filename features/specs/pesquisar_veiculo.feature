@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @tudo @asdf
+@smoke
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero conseguir navegar pelo site
@@ -16,7 +16,7 @@ Funcionalidade: Webmotors Web
     Entao deve retorna uma lista com os veiculos disponiveis
     Exemplos:
     | modelo     |
-    | Honda City |
+    | Honda      |
     | Fiat       |
     | Mercedes   |
     | Volkswagen |

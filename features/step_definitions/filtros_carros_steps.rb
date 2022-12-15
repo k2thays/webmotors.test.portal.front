@@ -23,6 +23,6 @@ Quando('seleciono uma marca e aplico alguns filtros') do
 end
 
 Entao('retorna a busca com os filtros') do
-  expect(page).to have_text 'Honda Novos e Usados do ano 2017 até 2021'
+  expect(page).to have_text 'Honda Novos e Usados do ano 2015 até 2021'
   take_screenshot('filtros', 'filtros_aplicados_carros')
 end
