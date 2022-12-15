@@ -12,7 +12,7 @@ class HomePage < SitePrism::Page
   element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
   elements :categorie_option, :xpath, '//*[@data-testid="Card_1"]'
   element :categories, '.bBNCJh .sc-jlyJG'
-  element :favorite_heart, '.sc-bMVAic:nth-child(1) svg'
+  elements :favorite_heart, '.sc-hEsumM.hiCjMu'
 
   # Menu superior de Compra
   element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
@@ -65,20 +65,12 @@ class HomePage < SitePrism::Page
   end
 
   def carregar_lista_veiculos
-    favorite_heart.visible?
+    favorite_heart[0].visible?
   end
 
   def pesquisar_veiculo(veiculo)
     input_busca.visible?
     input_busca.set(veiculo)
-    #if lista_retorno_busca[0].text[0, 7] != 'Modelos'
-      #input_busca.send_keys :space
-      #input_busca.set(veiculo)
-      #input_busca.send_keys :space
-      #input_busca.set(veiculo)
-      #input_busca.send_keys :space
-      #wait_until_seleciona_retorno_busca_visible
-    #end
     wait_until_seleciona_retorno_busca_visible
     seleciona_retorno_busca[0].click
   end
