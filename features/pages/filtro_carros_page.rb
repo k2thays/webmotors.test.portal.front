@@ -17,7 +17,7 @@ class CarFilters < SitePrism::Page
   element :color_white, :xpath, '/html/body/div[1]/main/div[1]/div[2]/div/div[17]/div/div[3]/div[3]/label'
   element :color_black, :xpath, '/html/body/div/main/div[1]/div[2]/div/div[17]/div/div[3]/div[7]/label'
   element :license_plate, '.Filters__container__group:nth-child(13) > .Form__InputRow:nth-child(2) > .Checkbox'
-  element :teste, '.CarouselContainer.undefined'
+  element :all_brands, '.CarouselContainer.undefined'
 
   def oferta_carros
     click_offerts.click
@@ -33,7 +33,7 @@ class CarFilters < SitePrism::Page
   end
 
   def selecionar_marca_carro
-    scroll_to_element(teste)
+    scroll_to_element(all_brands)
     brand_selector[3].click
   end
 
