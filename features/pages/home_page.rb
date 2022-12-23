@@ -12,7 +12,7 @@ class HomePage < SitePrism::Page
   element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
   elements :categorie_option, :xpath, '//*[@data-testid="Card_1"]'
   element :categories, '.bBNCJh .sc-jlyJG'
-  elements :favorite_heart, '.sc-hEsumM.hiCjMu'
+  elements :favorite_heart, '.sc-bbmXgH.MCVGq'
 
   # Menu superior de Compra
   element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
