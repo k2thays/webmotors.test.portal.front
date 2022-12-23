@@ -2,7 +2,7 @@ class CarFilters < SitePrism::Page
   element :click_offerts, '.Button--red-home'
   element :upper_tittle, '.title-search'
   element :filter_validate, 'label[data-testid="filter_Opportunities_superPreco"]'
-  elements :brand_selector, '.CardMake'
+  elements :brand_selector, '.CardMake__name-make'
   element :all_model_selector, '.Filters__line--gray'
   element :model_select, 'a[class*="Filters__line"][href*="civic"]'
   element :version_select, 'a[class*="Filters__line"][href*="20-exr-16v-flex-4p-automatico"]'
@@ -17,6 +17,7 @@ class CarFilters < SitePrism::Page
   element :color_white, :xpath, '/html/body/div[1]/main/div[1]/div[2]/div/div[17]/div/div[3]/div[3]/label'
   element :color_black, :xpath, '/html/body/div/main/div[1]/div[2]/div/div[17]/div/div[3]/div[7]/label'
   element :license_plate, '.Filters__container__group:nth-child(13) > .Form__InputRow:nth-child(2) > .Checkbox'
+  element :teste, '.CarouselContainer.undefined'
 
   def oferta_carros
     click_offerts.click
@@ -27,9 +28,12 @@ class CarFilters < SitePrism::Page
     filter_validate.visible?
   end
 
+  def scroll_to_element(elemento)
+    page.execute_script('arguments[0].scrollIntoView();', elemento)
+  end
+
   def selecionar_marca_carro
-    brand_selector.visible?
-    wait_until_brand_selector_visible
+    scroll_to_element(teste)
     brand_selector[3].click
   end
 
