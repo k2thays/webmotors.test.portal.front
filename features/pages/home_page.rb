@@ -2,16 +2,17 @@ class HomePage < SitePrism::Page
   # Header da página
   element :logo, '._IVZOj'
   element :input_busca, :xpath, '//*[@data-qa="Input_Autocomplete"]'
-  elements :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplte_DropItem_Model"]'
+  elements :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplte_DropItem_Brand"]'
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
   element :card_cars, '.sc-daURTG.hOmCb'
   element :fav_unchecked_carlist,  '.sc-hEsumM.hiCjMu'
-  element :moto_selector, '.NavBar--item:nth-child(2) > a'
-  element :sell_option, :xpath, '//*[@class="NavBar--item"]//*[contains(text(), "Quero Vender")]'
-  element :categorie_option, :xpath, '(//section[@id="home_categories_carousel"]/div/div/div/div/div/div/div/div/a)[1]'
+  element :sell_bike, :xpath, '//*[@data-qa="Tabs_Bikes"]'
+  elements :sell_option, '.sc-gYMRRK.kjzrDR'
+  element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
+  elements :categorie_option, :xpath, '//*[@data-testid="Card_1"]'
   element :categories, '.bBNCJh .sc-jlyJG'
-  element :favorite_heart, '.sc-bMVAic:nth-child(1) svg'
+  elements :favorite_heart, '.sc-bbmXgH.MCVGq'
 
   # Menu superior de Compra
   element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
@@ -23,12 +24,11 @@ class HomePage < SitePrism::Page
   element :upper_buy_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(2) > #navigationSafeBuy'
 
   # Menu Superior de Venda
-  element :sell_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(2)'
-  element :upper_sellmy_car, '#navigationSellMyCar'
-  element :upper_sellmy_bike, '#navigationSellMyBike'
-  element :upper_sell_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(3) > #navigationSafeBuy'
-  element :upper_manage_advertising, '#navigationManageAdvertising'
-  element :upper_sell_faztudo, '#navigationFazTudo'
+  element :sell_upper_menu, :xpath, '//*[@data-qa="header_sell"]'
+  element :upper_sellmy_car, :xpath, '//*[@data-qa="header_sell_car"]'
+  element :upper_sellmy_bike, :xpath, '//*[@data-qa="header_sell_bike"]'
+  element :upper_manage_advertising, :xpath, '//*[@data-qa="header_sell_manage_ad"]'
+  element :upper_sell_dealer_platform, :xpath, '//*[@data-qa="header_sell_dealer_platform"]'
 
   # Menu Superior de Ajuda
   element :upper_help, :xpath, '//*[@data-qa="header_help"]'
@@ -36,15 +36,13 @@ class HomePage < SitePrism::Page
   element :upper_forstore, :xpath, '//*[@data-qa="header_help_store"]'
 
   # Menu Superior de Serviços
-  element :services_upper_menu, '.Menu-User__list-links__navigation__item:nth-child(3)'
-  element :upper_fipe, '#navigationFipe'
-  element :upper_zerokm, '#navigationKM'
-  element :upper_assurance, '#navigationSafe'
-  element :upper_dealers, '#navigationDealer'
-  element :upper_financial, '#navigationFinancing'
-  element :upper_newswm, '#navigationNewsWM1'
-  element :upper_services_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(6) > #navigationSafeBuy'
-  element :upper_services_faztudo, '#navigationServicesFazTudo'
+  element :services_upper_menu, :xpath, '//*[@data-qa="header_services"]'
+  element :upper_fipe, :xpath, '//*[@data-qa="header_services_fipe"]'
+  element :upper_zerokm, :xpath, '//*[@data-qa="header_services_catalog_0km"]'
+  element :upper_assurance, :xpath, '//*[@data-qa="header_services_insurance"]'
+  element :upper_dealers,  :xpath, '//*[@data-qa="header_services_dealer_platform"]'
+  element :upper_financial, :xpath, '//*[@data-qa="header_services_financing"]'
+  element :upper_buy_certificada, :xpath, '//*[@data-qa="header_services_certified_purchase"]'
 
   # Menu Superior de Login
   element :login_upper_menu, :xpath, '//*[@data-qa="btn_header_login"]'
@@ -62,24 +60,18 @@ class HomePage < SitePrism::Page
 
   # MOTODOS
   def verificar_home
+    wait_until_logo_visible
     logo.visible?
   end
 
   def carregar_lista_veiculos
-    favorite_heart.visible?
+    favorite_heart[0].visible?
   end
 
   def pesquisar_veiculo(veiculo)
     input_busca.visible?
     input_busca.set(veiculo)
-    #if lista_retorno_busca[0].text[0, 7] != 'Modelos'
-      #input_busca.send_keys :space
-      #input_busca.set(veiculo)
-      #input_busca.send_keys :space
-      #input_busca.set(veiculo)
-      #input_busca.send_keys :space
-      #wait_until_seleciona_retorno_busca_visible
-    #end
+    wait_until_seleciona_retorno_busca_visible
     seleciona_retorno_busca[0].click
   end
 
@@ -100,16 +92,20 @@ class HomePage < SitePrism::Page
     page.refresh
   end
 
-  def comprar_motos
-    moto_selector.click
-  end
-
-  def quero_vender
+  def vender_motos
     sell_option.click
   end
 
+  def quero_vender
+    sell_option[0].click
+  end
+
+  def comprar_motos
+    sell_bike.click
+  end  
+
   def categorias
-    categorie_option.click
+    categorie_option[0].click
   end
 
   def menu_comprar
@@ -160,8 +156,8 @@ class HomePage < SitePrism::Page
     upper_manage_advertising.click
   end
 
-  def venda_faztudo
-    upper_sell_faztudo.click
+  def venda_revendedores
+    upper_sell_dealer_platform.click
   end
 
   def menu_ajuda
@@ -184,6 +180,10 @@ class HomePage < SitePrism::Page
     upper_fipe.click
   end
 
+  def plataforma_rev
+    upper_sell_dealer_platform.click
+  end 
+
   def servicos_zerokm
     upper_zerokm.click
   end
@@ -201,7 +201,7 @@ class HomePage < SitePrism::Page
   end
 
   def servicos_noticiaswm
-    upper_newswm.click
+    upper_buy_certificada.click
   end
 
   def servicos_compra_segura

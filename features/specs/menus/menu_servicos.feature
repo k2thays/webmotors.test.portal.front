@@ -18,9 +18,7 @@ Funcionalidade: Webmotors Web
     | servico                 |
     | Tabela FIPE             |
     | Catálogo 0km            |
-    | Seguro                  |
+    | Seguro veículo          |
     | Plataforma Revendedores |
     | Financiamento           |
-    | Notícias WM1            |
-    #| Autopago                | Tomando erro 404
-    #| FazTudo                 | A página não carrega em modo teste
+    | Compra certificada      |

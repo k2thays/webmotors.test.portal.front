@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@pending @filtro_carros 
+@smoke @filtro_carros 
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero conseguir navegar pelo site

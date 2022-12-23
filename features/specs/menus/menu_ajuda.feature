@@ -21,7 +21,7 @@ Funcionalidade: Webmotors Web
 
   @pending @menu_ajuda_logado
   Esquema do Cenário: Menu Ajuda
-    E faço login com "automacaoportal@gmail.com" e "Webmotors.2022"
+    E faço login com "albin@putsbox.com" e "@TesteQA1"
     Quando quero acessar o menu "<ajuda>"
     Entao devo ser direcionado para a página de "<ajuda>"
     Exemplos:

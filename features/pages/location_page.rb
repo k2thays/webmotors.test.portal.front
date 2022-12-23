@@ -1,7 +1,7 @@
 class Location < SitePrism::Page
   element :validacao, '.Filters__container__group:nth-child(1) > .Filters__container__group__title'
   element :input_location, '#locationAutoComplete'
-  element :select_result, '.AutoComplete-result:nth-child(2) > .AutoComplete-result-name'
+  elements :select_result, '.AutoComplete-result:nth-child(2) > .AutoComplete-result-name'
   element :close_locator, '.AutoComplete__icon'
 
   def verificar_location
@@ -10,7 +10,7 @@ class Location < SitePrism::Page
 
   def fill_form(location)
     input_location.set location
-    select_result.click
+    select_result[0].click
   end
 
   def remove_locator

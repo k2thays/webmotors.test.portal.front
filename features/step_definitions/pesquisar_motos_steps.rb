@@ -16,6 +16,6 @@ Quando('que eu pesquiso um modelo da marca {string}') do |motos|
 end
 
 Entao('vejo a lista de motos disponível na região de {string}') do |regiao|
-  expect(page).to have_text "Motos Yamaha Novas e Usadas em #{regiao}/SP"
+  expect(page).to have_text "#{regiao}"
   take_screenshot('pesquisar_moto', 'lista_motos_localizacao')
 end
