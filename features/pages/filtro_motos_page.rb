@@ -1,7 +1,8 @@
 class MotoFilters < SitePrism::Page
-  element :moto_selec, '.NavBar--item:nth-child(2) > a'
-  element :brand_selector, 'div[class*="CarouselContainer"] a[title="honda"]'
-  element :all_model_selector, '.Filters__line--gray'
+  element :moto_selec, :xpath, '//*[@data-qa="Tabs_Bikes"]'
+  elements :brand_selector, '.CardMake__name-make'
+  element :all_brands, '.CarouselContainer.undefined'
+  element :all_model_selector, '.Filters__line.Filters__line--gray.Filters__line--icon.Filters__line--icon--right'
   element :model_select, 'a[class*="Filters__line"][href$="cg-125-fan"]'
   # filtros
   element :from_year_field, 'input[name="anode"]'
@@ -17,9 +18,13 @@ class MotoFilters < SitePrism::Page
     moto_selec.click
   end
 
+  def scroll_to_element(elemento)
+    page.execute_script('arguments[0].scrollIntoView();', elemento)
+  end
+
   def selecionar_marca
-    wait_until_brand_selector_visible
-    brand_selector.click
+    scroll_to_element(all_brands)
+    brand_selector[4].click
   end
 
   def selecionar_modelo
