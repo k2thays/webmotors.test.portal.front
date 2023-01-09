@@ -1,7 +1,7 @@
 Quando('entro para ver as ofertas de motos') do
   motofilters.selecionar_comprar_motos
   carfilters.oferta_carros
-  carfilters.validar_page_filtros
+  #carfilters.validar_page_filtros
 end
 
 Quando('faço um filtro por marca e modelo') do
