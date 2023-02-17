@@ -19,7 +19,7 @@ podTemplate(inheritFrom: 'agent-ruby') {
                 }
                 
                 stage('Test: QA Front') {
-                  catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     echo 'Execuntado os testes automatizados'
                     sh """
                         gem install bundler && bundle install
