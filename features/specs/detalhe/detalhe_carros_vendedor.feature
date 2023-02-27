@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @detalhe @teste
+@smoke @detalhe
 Funcionalidade: Verificar anuncios de um mesmo vendedor
   Eu como Usuario 
   Quero verificar todos os anuncios de um vendedor
