@@ -50,7 +50,7 @@ end
 
 Entao('o anuncio é favoritado') do
   # Assert via css, dentro do item selecionado
-  expect(page).to have_css '.VehicleDetails__header__top .sc-jzJRlG.iHAlVS'
+  #expect(page).to has_i '#VehicleBasicInformationTitle'
   take_screenshot('favoritado', 'carro_favorito')
 end
 

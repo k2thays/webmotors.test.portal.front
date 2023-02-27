@@ -6,10 +6,12 @@ class Installment < SitePrism::Page
   element :input_cpf, 'form[class="Forms__container"] input[name="cpf"]'
   element :location_select, '.Form__field.Form__field--select'
   element :proposal_send, 'button[data-qa="btnSendProposalFinancing"]'
+  element :ver_parcelas, '.sc-jnlKLf.fsorZE' 
+  element :ver_parcelas_nao_avisar, '.sc-fYxtnH.imqCGt'
   element :input_valor, 'input[data-qa="inputIntakeFinancing"]'
  
-  def fill_form
-    input_name.set Faker::Name.first_name
+  def fill_form_financiamento
+    input_name.set "Teste financiamento"
     input_email.set Faker::Internet.email
     input_phone.set '11992176665'
     input_birthday.set '19111956'
@@ -17,7 +19,7 @@ class Installment < SitePrism::Page
     location_select.select('São Paulo')
   end
 
-  def fill_form_fail(user)
+  def fill_form_fail_financiamento(user)
     input_name.set user[:nome] unless user[:nome].empty?
     input_email.set user[:email] unless user[:email].empty?
     input_phone.set user[:telefone] unless user[:telefone].empty?
@@ -28,7 +30,17 @@ class Installment < SitePrism::Page
 
   def show_result
     proposal_send.click
+    if wait_until_ver_parcelas_visible
+      sleep(1)
+      ver_parcelas.click
+    end  
   end
+
+  def show_result_not
+    binding.pry
+    proposal_send.click
+    ver_parcelas_nao_avisar.click
+  end   
 
   def fill_form
     input_name.set Faker::Name.first_name
@@ -48,7 +60,10 @@ class Installment < SitePrism::Page
     location_select.select("#{user[:estado]}")
   end
 
-  def show_result
-    proposal_send.click
+  def ver_condicoes
+    sleep(35)
+    wait_until_input_valor_visible
+    installment.input_valor.visible?
   end
+
 end

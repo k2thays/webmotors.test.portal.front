@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @detalhe @financiamento
+@smoke @detalhe #@financiamento
 Funcionalidade: Validar simulação de financiamento
       Eu como Usuario
   Quero simular um financiamento
@@ -34,7 +34,7 @@ Funcionalidade: Validar simulação de financiamento
 
   @financiamento_falha 
   Esquema do Cenário: Simular financiamento
-    E faço a busca por um "Honda"
+    E faço a busca por um "Chevro"
     E seleciono um anúncio
     Quando não preencho todos os campos
       | nome         | email         | telefone         | nascimento         | cpf         | estado         |
