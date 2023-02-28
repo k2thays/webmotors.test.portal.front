@@ -21,9 +21,3 @@ Funcionalidade: Webmotors Web
     Quando entro para ver as ofertas
     E seleciono uma marca e aplico alguns filtros
     Então retorna a busca com os filtros
-
-  @testeandre
-  Cenário: Teste andré 
-    Dado que teste andre
-    Quando teste andre
-    Então teste andre
