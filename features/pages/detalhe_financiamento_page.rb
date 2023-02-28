@@ -31,13 +31,11 @@ class Installment < SitePrism::Page
   def show_result
     proposal_send.click
     if wait_until_ver_parcelas_visible
-      sleep(1)
       ver_parcelas.click
     end  
   end
 
   def show_result_not
-    binding.pry
     proposal_send.click
     ver_parcelas_nao_avisar.click
   end   
@@ -61,7 +59,6 @@ class Installment < SitePrism::Page
   end
 
   def ver_condicoes
-    sleep(35)
     wait_until_input_valor_visible
     installment.input_valor.visible?
   end
