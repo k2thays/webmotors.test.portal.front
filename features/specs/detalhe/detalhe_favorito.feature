@@ -18,15 +18,15 @@ Funcionalidade: Validar favorito logado
    E desejo favoritar
    Entao o anuncio é favoritado
    Exemplos:
-   | modelo     |
-   | Honda      |
-   | Fiat       |
-   | Chevrolet  |
-   | Ford       |
-   | Hyundai    |
-   | Peugeot    |
-   | Volkswagen |
-   | Renault    |
+  | modelo     |
+  | Honda      |
+  | Fiat       |
+  | Chevrolet  |
+  | Ford       |
+  | Hyundai    |
+  | Peugeot    |
+  | Volkswagen |
+  | Renault    |
 
 @favoritos_deslogado
 Cenário: Validar favorito deslogado
