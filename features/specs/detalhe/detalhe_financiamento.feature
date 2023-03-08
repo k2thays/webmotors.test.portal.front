@@ -11,26 +11,11 @@ Funcionalidade: Validar simulação de financiamento
     Dado que estou na home da webmotors
 
   @financiamento
-  Esquema do Cenário: Simular financiamento
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
+  Cenário: Simular financiamento
+    E visito a página do anuncio 
     Quando preencho o formulário para consulta
     E decido ver parcelas avisando
     Entao devo visualizar as condições oferecidas
-    Exemplos:
-      | modelo     |
-      | Chevrolet  |
-
-  @financiamento_sem_avisar
-  Esquema do Cenário: Simular financiamento sem avisar
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
-    Quando preencho o formulário para consulta
-    E decido não avisar
-    Entao devo visualizar as condições oferecidas
-    Exemplos:
-      | modelo     |
-      | Chevrolet  |
 
   @financiamento_falha 
   Esquema do Cenário: Simular financiamento
