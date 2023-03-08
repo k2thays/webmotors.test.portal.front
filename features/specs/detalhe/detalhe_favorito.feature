@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @busca @favorito
+@smoke @detalhe
 Funcionalidade: Validar favorito logado
   Eu como Usuario
   Quero conseguir navegar pelo site
@@ -23,10 +23,6 @@ Funcionalidade: Validar favorito logado
   | Fiat       |
   | Chevrolet  |
   | Ford       |
-  | Hyundai    |
-  | Peugeot    |
-  | Volkswagen |
-  | Renault    |
 
 @favoritos_deslogado
 Cenário: Validar favorito deslogado
@@ -42,7 +38,3 @@ Cenário: Validar favorito deslogado
   | Fiat       |
   | Chevrolet  |
   | Ford       |
-  | Hyundai    |
-  | Peugeot    |
-  | Volkswagen |
-  | Renault    |
