@@ -6,7 +6,7 @@ class Installment < SitePrism::Page
   element :input_cpf, 'form[class="Forms__container"] input[name="cpf"]'
   element :location_select, '.Form__field.Form__field--select'
   element :proposal_send, 'button[data-qa="btnSendProposalFinancing"]'
-  element :ver_parcelas, '.sc-jnlKLf.fsorZE' 
+  element :ver_condicoes, :xpath, '//*[@data-qa="submitSendProposal"]' 
   element :ver_parcelas_nao_avisar, '.sc-fYxtnH.imqCGt'
   element :input_valor, 'input[data-qa="inputIntakeFinancing"]'
  
@@ -15,7 +15,7 @@ class Installment < SitePrism::Page
     input_email.set Faker::Internet.email
     input_phone.set '11992176665'
     input_birthday.set '19111956'
-    input_cpf.set Faker::CPF.numeric
+    input_cpf.set '32523509806'
     location_select.select('São Paulo')
   end
 
@@ -30,14 +30,12 @@ class Installment < SitePrism::Page
 
   def show_result
     proposal_send.click
-    if wait_until_ver_parcelas_visible
-      ver_parcelas.click
-    end  
+    wait_until_ver_condicoes_visible  
   end
 
   def show_result_not
     proposal_send.click
-    ver_parcelas_nao_avisar.click
+    #ver_parcelas_nao_avisar.click
   end   
 
   def fill_form

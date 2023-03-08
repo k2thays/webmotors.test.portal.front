@@ -7,7 +7,7 @@ end
 Entao('recebo a confirmação') do
   # Assert de confirmação
   expect(page).to have_text 'Mensagem enviada!'
-  take_screenshot('envio_lead', 'mensagem_vendedor')
+  take_screenshot('envio_lead', 'Mensagem enviada!')
 end
 
 Quando('preencho somente alguns campos:') do |table|
