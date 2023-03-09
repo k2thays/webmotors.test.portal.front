@@ -6,7 +6,7 @@ class HomePage < SitePrism::Page
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
   element :card_cars, '.sc-iujRgT.jtOieA'
-  element :fav_unchecked_carlist,  :xpath, '//*[@ddata-test-id="card_favorite_23853904"]'
+  element :fav_unchecked_carlist,  :xpath, '//*[@data-test-id="card_favorite_23853904"]'
   element :sell_bike, :xpath, '//*[@data-qa="Tabs_Bikes"]'
   elements :sell_option, '.sc-gYMRRK.kjzrDR'
   element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
@@ -14,6 +14,8 @@ class HomePage < SitePrism::Page
   element :categories, '.bBNCJh .sc-jlyJG'
   elements :favorite_heart, '.sc-bbmXgH.MCVGq'
   element :acept_cookie, :xpath, '//*[@data-qa="btn_understoodCookieWarn"]'
+  element :list_car_rb, :xpath, '//*[@data-qa="vehicle_list_container"]'
+  element :tag_compra_certificada, :xpath, '//*[@data-qa="filter_result_compra-certificada"]'
 
   # Menu superior de Compra
   element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
@@ -78,7 +80,7 @@ class HomePage < SitePrism::Page
   end
 
   def validar_card_carros
-    wait_until_fav_unchecked_carlist_visible
+    wait_until_list_car_rb_visible
   end
 
   def validar_retorno_busca
@@ -245,4 +247,9 @@ class HomePage < SitePrism::Page
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
     acept_cookie.click if page.has_text?('Entendi', wait: 2)
   end
+
+  def validar_compra_certificada
+    wait_until_tag_compra_certificada_visible
+  end
+
 end

@@ -13,3 +13,7 @@ Entao('deve retorna uma lista com os veiculos disponiveis {string}') do |menu_co
   home_page.validar_card_carros
   take_screenshot('menu_comprar', 'menus')
 end
+
+Entao('deve retorna uma lista com os veiculos disponiveis da compra certificada') do
+  home_page.validar_compra_certificada
+end
