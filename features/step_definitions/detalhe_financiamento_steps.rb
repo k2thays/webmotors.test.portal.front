@@ -1,3 +1,7 @@
+Dado('visito a página do anuncio') do
+  visit 'https://hportal.webmotors.com.br/comprar/chevrolet/astra/20-mpfi-cd-8v-gasolina-2p-manual/4-portas/2002-2003/1547406?pos=e1547406a:&np=1'
+end   
+
 Quando('preencho o formulário para consulta') do
   # preenchimento do formulário para analise de parcelas
   installment.fill_form_financiamento
@@ -8,13 +12,8 @@ Quando('decido ver parcelas avisando') do
   installment.show_result
 end
 
-Quando('decido não avisar') do
-  # Botão 'Ver Parcelas'
-  installment.show_result_not
-end
-
 Entao('devo visualizar as condições oferecidas') do
-  installment.ver_condicoes
+  expect(page).to have_text("melhores condições")
 end
 
 Quando('não preencho todos os campos') do |table|
