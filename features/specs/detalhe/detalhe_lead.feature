@@ -4,7 +4,7 @@
 #VERIFICAR RESULTADO DE SUCESSO DO FINANCIMANETO EM HOMOLOGAÇÃO
 #VERIFICAR COM TIME DE FINANCIAMENTO PARA PEGAR OS DADOS QUE PASSAM NAS PARCELAS
 
-@smoke @detalhe @lead
+@smoke @detalhe
 Funcionalidade: Validar envio lead
   Eu como Usuario
   Quero enviar uma notificação de interesse
@@ -20,12 +20,12 @@ Funcionalidade: Validar envio lead
     Quando envio mensagem do lead
     Entao recebo a confirmação
     Exemplos:
-    | modelo |
-    | Honda  |
+    | modelo     |
+    | Chevrolet  |
 
   @lead_falha
   Esquema do Cenário: Lead sem preencher os campos
-    E faço a busca por um "Honda"
+    E faço a busca por um "Chevrolet"
     E seleciono um anúncio
     Quando preencho somente alguns campos:
     | nome         | email         | telefone         | mensagem         |
@@ -41,7 +41,7 @@ Funcionalidade: Validar envio lead
 
   @lead_falha
   Esquema do Cenário: Lead sem preencher os campos
-      E faço a busca por um "Honda"
+      E faço a busca por um "Chevrolet"
       E seleciono um anúncio
     Quando preencho somente alguns campos:
       | nome         | email         | telefone         | mensagem         |
@@ -63,5 +63,5 @@ Funcionalidade: Validar envio lead
     E preencho o formulario
     Entao exibe mensagem enviada com sucesso
     Exemplos:
-    | modelo |
-    | Honda  |
+    | modelo     |
+    | Chevrolet  |

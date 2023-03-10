@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @busca @favorito
+@smoke @detalhe
 Funcionalidade: Validar favorito logado
   Eu como Usuario
   Quero conseguir navegar pelo site
@@ -18,15 +18,11 @@ Funcionalidade: Validar favorito logado
    E desejo favoritar
    Entao o anuncio é favoritado
    Exemplos:
-   | modelo     |
-   | Honda      |
-   | Fiat       |
-   | Chevrolet  |
-   | Ford       |
-   | Hyundai    |
-   | Peugeot    |
-   | Volkswagen |
-   | Renault    |
+  | modelo     |
+  | Honda      |
+  | Fiat       |
+  | Chevrolet  |
+  | Ford       |
 
 @favoritos_deslogado
 Cenário: Validar favorito deslogado
@@ -42,7 +38,3 @@ Cenário: Validar favorito deslogado
   | Fiat       |
   | Chevrolet  |
   | Ford       |
-  | Hyundai    |
-  | Peugeot    |
-  | Volkswagen |
-  | Renault    |

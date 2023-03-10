@@ -6,10 +6,9 @@ class Favorite < SitePrism::Page
   element :input_password, '#password'
   element :car_item, :xpath, '//div[@id="root"]/main/div/div[3]/div[2]/div/div/div/div[2]/div/div[2]/a/div/h3'
   element :fav_checked_cardetails, '.VehicleDetails__header__top .sc-jzJRlG.iHAlVS'
-  element :fav_unchecked_cardetails, '.VehicleDetails__header__top .sc-jzJRlG.xPHcV'
-  element :fav_checked_carlist, '.sc-gqPbQI.ldOiUz:nth-child(2) .sc-jzJRlG.dVKAHr'
-  element :fav_unchecked_carlist, '.sc-jlyJG.brCSCC'
-
+  element :fav_unchecked_cardetails, '#VehicleBasicInformationTitle'
+  element :fav_checked_carlist, '.sc-cMljjf.hebcXp'
+  element :fav_unchecked_carlist, '.sc-cMljjf.hBHEWF'
   def login_upper_menu
     close_popup_login.click
     login_menu.hover
@@ -34,7 +33,7 @@ class Favorite < SitePrism::Page
   end
 
   def car_fav_add
-    fav_unchecked_carlist.click
+    fav_checked_carlist.click
   end
 
   def list_fav_add

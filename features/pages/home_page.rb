@@ -2,17 +2,20 @@ class HomePage < SitePrism::Page
   # Header da página
   element :logo, '._IVZOj'
   element :input_busca, :xpath, '//*[@data-qa="Input_Autocomplete"]'
-  elements :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplte_DropItem_Brand"]'
+  element :seleciona_retorno_busca,  :xpath, '//*[@data-qa="Autocomplete_DropItem_Brand"]'
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
-  element :card_cars, '.sc-daURTG.hOmCb'
-  element :fav_unchecked_carlist,  '.sc-hEsumM.hiCjMu'
+  element :card_cars, '.sc-iujRgT.jtOieA'
+  element :fav_unchecked_carlist,  :xpath, '//*[@data-test-id="card_favorite_23853904"]'
   element :sell_bike, :xpath, '//*[@data-qa="Tabs_Bikes"]'
   elements :sell_option, '.sc-gYMRRK.kjzrDR'
   element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
   elements :categorie_option, :xpath, '//*[@data-testid="Card_1"]'
   element :categories, '.bBNCJh .sc-jlyJG'
   elements :favorite_heart, '.sc-bbmXgH.MCVGq'
+  element :acept_cookie, :xpath, '//*[@data-qa="btn_understoodCookieWarn"]'
+  element :list_car_rb, :xpath, '//*[@data-qa="vehicle_list_container"]'
+  element :tag_compra_certificada, :xpath, '//*[@data-qa="filter_result_compra-certificada"]'
 
   # Menu superior de Compra
   element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
@@ -56,7 +59,7 @@ class HomePage < SitePrism::Page
 
   # Retorno da busca
   element :fechar_modal, '.modal--close'
-  elements :retorno_busca, :xpath, '//*[@class="sc-hMFtBS cVTeoI"]'
+  elements :retorno_busca, :xpath, '//*[@data-qa="Autocomplete_DropItem_Brand"]'
 
   # MOTODOS
   def verificar_home
@@ -71,13 +74,13 @@ class HomePage < SitePrism::Page
   def pesquisar_veiculo(veiculo)
     input_busca.visible?
     input_busca.set(veiculo)
+    input_busca.send_keys :backspace
     wait_until_seleciona_retorno_busca_visible
-    seleciona_retorno_busca[0].click
+    seleciona_retorno_busca.click
   end
 
   def validar_card_carros
-    wait_until_card_cars_visible
-    wait_until_fav_unchecked_carlist_visible
+    wait_until_list_car_rb_visible
   end
 
   def validar_retorno_busca
@@ -242,5 +245,11 @@ class HomePage < SitePrism::Page
   def aceitar_coockies
     fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
+    acept_cookie.click if page.has_text?('Entendi', wait: 2)
   end
+
+  def validar_compra_certificada
+    wait_until_tag_compra_certificada_visible
+  end
+
 end

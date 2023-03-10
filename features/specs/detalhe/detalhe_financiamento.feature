@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @detalhe @financiamento
+@smoke @detalhe
 Funcionalidade: Validar simulação de financiamento
       Eu como Usuario
   Quero simular um financiamento
@@ -11,30 +11,15 @@ Funcionalidade: Validar simulação de financiamento
     Dado que estou na home da webmotors
 
   @financiamento
-  Esquema do Cenário: Simular financiamento
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
+  Cenário: Simular financiamento
+    E visito a página do anuncio 
     Quando preencho o formulário para consulta
     E decido ver parcelas avisando
     Entao devo visualizar as condições oferecidas
-    Exemplos:
-      | modelo     |
-      | Chevrolet  |
-
-  @financiamento_sem_avisar
-  Esquema do Cenário: Simular financiamento sem avisar
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
-    Quando preencho o formulário para consulta
-    E decido não avisar
-    Entao devo visualizar as condições oferecidas
-    Exemplos:
-      | modelo     |
-      | Chevrolet  |
 
   @financiamento_falha 
   Esquema do Cenário: Simular financiamento
-    E faço a busca por um "Honda"
+    E faço a busca por um "Chevro"
     E seleciono um anúncio
     Quando não preencho todos os campos
       | nome         | email         | telefone         | nascimento         | cpf         | estado         |

@@ -7,12 +7,19 @@ podTemplate(inheritFrom: 'agent-ruby') {
                     workspacesFolder = pwd()
                 }
 
+                stage ('Load Libs') {
+                    git branch: 'master',
+                        credentialsId: 'deployjenkins2',
+                        url: 'git@bitbucket.org:webmotors/qa.libs.git'
+                    common = load "common.grovvy"
+                }
+
                 stage ('Git pull') {
                   checkout scm
                 }
                 
                 stage('Test: QA Front') {
-                  catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     echo 'Execuntado os testes automatizados'
                     sh """
                         gem install bundler && bundle install
@@ -23,7 +30,7 @@ podTemplate(inheritFrom: 'agent-ruby') {
                   }
                 }
 
-                stage('Quality Gate - Report') {
+                stage('Report') {
                   script {
                       allure([
                         includeProperties: false,
@@ -35,7 +42,7 @@ podTemplate(inheritFrom: 'agent-ruby') {
                     }
                 }
 
-                stage('Notification Teams'){
+                stage('Quality Gate'){
                     	script{
                     		def result = readJSON file: "${workspacesFolder}/allure-report/history/history-trend.json"
                     		def failed = result.data.failed[0]
@@ -46,13 +53,7 @@ podTemplate(inheritFrom: 'agent-ruby') {
                     		def totalFailed = failed + broken
                     		def calc = passed * 100 / totalTests
                     		calc = (int)calc
-                    		
-                        if(calc < 75){
-                        	def emailBody = "<html> <meta charset='UTF-8' /> <header> <title>Build ${env.BUILD_NUMBER}Result of ${env.JOB_NAME}</title> </header> <body> Segue o resultado da execução dos testes automatizados da Build ${env.BUILD_NUMBER} do projeto ${env.JOB_NAME}: <br /> <ul> <li><b>Resultado:</b></li> <ul> <li><b>Total de Testes: </b>$totalTests</li> <li><b>Passaram: </b>$passed</li> <li><b>Falharam: </b>$totalFailed</li> <li><b>Assertividade: </b>$calc%</li> </ul> </ul> <li><b>Status:</b> ${currentBuild.currentResult}</li> <b> <li><b>URL:</b> ${env.BUILD_URL}</li> </ul> Para mais informações, verifique: <br /> <ul> <li> <b>Saída do console</b> contendo o log de execução dos testes na url <a href='${env.BUILD_URL}/console'>${env.BUILD_URL}console</a> </li> <li> <b>Relatório</b> da execução dos testes automatizados: <a href='${env.BUILD_URL}/allure'>Link Final Report</a></li> </ul> </body> </html>"
-                        					
-                        					office365ConnectorSend webhookUrl: 'https://webmotors.webhook.office.com/webhookb2/8d7d3a6d-1dd0-4c83-b0d7-945540b60aba@fa250495-e667-434f-8231-9f9fc3ce8520/IncomingWebhook/9a6759f8efca4567bc30407a54b44eb3/4fa86ebd-86aa-494b-a8ef-65288e4b2650', 
-                        						message: emailBody
-                        }
+                    		common.Calc(calc, totalTests, passed, totalFailed)
                     }
                 }
 

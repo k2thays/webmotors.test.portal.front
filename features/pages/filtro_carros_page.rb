@@ -38,11 +38,9 @@ class CarFilters < SitePrism::Page
   end
 
   def selecionar_modelo_carro
-    sleep(1)
     wait_until_all_model_selector_visible
     all_model_selector.click
     if wait_until_model_select_visible
-      sleep(1)
       model_select.click
       page.refresh
     end

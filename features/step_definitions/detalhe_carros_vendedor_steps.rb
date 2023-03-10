@@ -15,6 +15,6 @@ end
 
 Entao('sou redirecionado para a lista de anuncios') do
   # Assert via css para catalogo de itens
-  expect(page).to have_css '.sc-iSDuPN.fNTVoc'
+  expect(page).to have_css '.ContainerCardVehicle.ads_align '
   take_screenshot('itens_vendedor', 'lista_itens_vendedor')
 end
