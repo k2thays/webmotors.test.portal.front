@@ -14,6 +14,8 @@ class HomePage < SitePrism::Page
   element :categories, '.bBNCJh .sc-jlyJG'
   elements :favorite_heart, '.sc-bbmXgH.MCVGq'
   element :acept_cookie, :xpath, '//*[@data-qa="btn_understoodCookieWarn"]'
+  element :list_car_rb, :xpath, '//*[@data-qa="vehicle_list_container"]'
+  element :tag_compra_certificada, :xpath, '//*[@data-qa="filter_result_compra-certificada"]'
 
   # Menu superior de Compra
   element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
@@ -78,7 +80,7 @@ class HomePage < SitePrism::Page
   end
 
   def validar_card_carros
-    wait_until_fav_unchecked_carlist_visible
+    wait_until_list_car_rb_visible
   end
 
   def validar_retorno_busca
@@ -245,4 +247,9 @@ class HomePage < SitePrism::Page
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
     acept_cookie.click if page.has_text?('Entendi', wait: 2)
   end
+
+  def validar_compra_certificada
+    wait_until_tag_compra_certificada_visible
+  end
+
 end
