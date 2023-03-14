@@ -9,7 +9,10 @@ class MotoFilters < SitePrism::Page
   element :to_year_field, 'input[name="anoate"]'
   element :from_pricer, 'input[name="precode"]'
   element :to_pricer, 'input[name="precoate"]'
-  element :color_select, '.Filters__container__group:nth-child(22) > .Filters__line'
+  element :color_select, :xpath, '//*[@data-qa="filter_color_branco"]'
+  element :marca_moto_bmw, :xpath, '//*[@data-qa="filter_make_card_bmw"]'
+  element :filtro_super_preco, :xpath, '//*[@data-qa="filter_opportunity_superPreco"]'
+
   # checkbox
   element :color_silver, '.SlideLeft--opened .Form__InputRow:nth-child(10) > .Checkbox'
   element :slide_close, '.SlideLeft--opened .Filters__back'
@@ -23,17 +26,14 @@ class MotoFilters < SitePrism::Page
   end
 
   def selecionar_marca
-    scroll_to_element(all_brands)
-    brand_selector[4].click
+    scroll_to_element(filtro_super_preco)
+    marca_moto_bmw.click
   end
 
   def selecionar_modelo
     wait_until_all_model_selector_visible
     all_model_selector.click
-    if wait_until_model_select_visible
-      model_select.click
-      page.refresh
-    end
+    click_link "F 700 GS"
   end
 
   def preencher_ano
@@ -43,12 +43,10 @@ class MotoFilters < SitePrism::Page
 
   def preencher_preco
     from_pricer.set '2000'
-    to_pricer.set '15000'
+    to_pricer.set '50000'
   end
 
   def selecionar_cores
     color_select.click
-    wait_until_slide_close_visible
-    color_silver.click
   end
 end

@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @detalhe
+@smoke
 Funcionalidade: Validar favorito logado
   Eu como Usuario
   Quero conseguir navegar pelo site

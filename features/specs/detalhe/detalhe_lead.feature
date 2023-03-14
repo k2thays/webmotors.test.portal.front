@@ -4,7 +4,7 @@
 #VERIFICAR RESULTADO DE SUCESSO DO FINANCIMANETO EM HOMOLOGAÇÃO
 #VERIFICAR COM TIME DE FINANCIAMENTO PARA PEGAR OS DADOS QUE PASSAM NAS PARCELAS
 
-@smoke @detalhe
+@smoke
 Funcionalidade: Validar envio lead
   Eu como Usuario
   Quero enviar uma notificação de interesse

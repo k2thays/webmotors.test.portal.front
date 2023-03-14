@@ -6,7 +6,7 @@ class HomePage < SitePrism::Page
   elements :lista_retorno_busca, :xpath, '//*[@class="SearchBar__results__group"][1]'
   element :busca_sem_retorno, '.SearchBar__results__result.no-result'
   element :card_cars, '.sc-iujRgT.jtOieA'
-  element :fav_unchecked_carlist,  :xpath, '//*[@ddata-test-id="card_favorite_23853904"]'
+  element :fav_unchecked_carlist,  :xpath, '//*[@data-qa="card_favorite"]'
   element :sell_bike, :xpath, '//*[@data-qa="Tabs_Bikes"]'
   elements :sell_option, '.sc-gYMRRK.kjzrDR'
   element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
