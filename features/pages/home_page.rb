@@ -8,7 +8,7 @@ class HomePage < SitePrism::Page
   element :card_cars, '.sc-iujRgT.jtOieA'
   element :fav_unchecked_carlist,  :xpath, '//*[@data-qa="card_favorite"]'
   element :sell_bike, :xpath, '//*[@data-qa="Tabs_Bikes"]'
-  elements :sell_option, '.sc-gYMRRK.kjzrDR'
+  element :sell_option, :xpath, '//*[@data-qa="Sell_Link"]'
   element :sell_car, :xpath, '//*[@data-qa="header_sell_car"]' 
   elements :categorie_option, :xpath, '//*[@data-testid="Card_1"]'
   element :categories, '.bBNCJh .sc-jlyJG'
@@ -100,7 +100,7 @@ class HomePage < SitePrism::Page
   end
 
   def quero_vender
-    sell_option[0].click
+    sell_option.click
   end
 
   def comprar_motos

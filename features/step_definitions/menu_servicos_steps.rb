@@ -12,22 +12,22 @@ end
 Entao('devo ser direcionado para a area de {string}') do |menu_servico|
   case menu_servico
   when 'Tabela FIPE'
-    expect(page).to have_text 'Tabela Fipe e Webmotors'
+    expect(page).to have_current_path('https://hportal.webmotors.com.br/tabela-fipe/?lkid=1010', url: true)
 
   when 'Catálogo 0km'
-    expect(page).to have_text 'Tudo que você precisa para escolher o seu carro 0KM'
+    expect(page).to have_current_path('https://hportal.webmotors.com.br/catalogo?lkid=1012', url: true)
 
   when 'Seguro veículo'
-    expect(page).to have_text 'Procurando por seguro auto ou moto?'
+    expect(page).to have_current_path('https://www.autocompara.com.br/?lkid=1015', url: true)
 
   when 'Plataforma Revendedores'
-    expect(page).to have_text 'Você no comando do seu negócio.'
+    expect(page).to have_current_path('https://www.cockpit.com.br/?lkid=1017', url: true)
 
   when 'Financiamento'
-    expect(page).to have_text 'As melhores condições para comprar seu carro estão aqui'
+    expect(page).to have_current_path('https://hportal.webmotors.com.br/financiamento?lkid=1011', url: true)
 
   when 'Compra certificada'
-    expect(page).to have_css '.row.justify-content-between'
+    expect(page).to have_current_path('https://www.webmotors.com.br/compracertificada?lkid=1577', url: true)
   end
   take_screenshot('menu_servicos', 'servicos')
 end
