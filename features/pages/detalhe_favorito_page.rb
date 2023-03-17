@@ -9,6 +9,8 @@ class Favorite < SitePrism::Page
   element :fav_unchecked_cardetails, '#VehicleBasicInformationTitle'
   element :fav_checked_carlist, '.sc-cMljjf.hebcXp'
   element :fav_unchecked_carlist, '.sc-cMljjf.hBHEWF'
+
+  
   def login_upper_menu
     close_popup_login.click
     login_menu.hover
