@@ -4,7 +4,8 @@ Quando('quero vender um carro') do
 end
 
 Entao('sou redirecionado para anunciar o veiculo') do
-  expect(page).to have_text 'Anuncie e venda seu carro pelo melhor preço'
+  expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-carro?lkid=1020', url: true)
+  #expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-carro?lkid=1020', url: true)
   take_screenshot('menu_vender', 'vender_carro')
 end
 
@@ -15,7 +16,7 @@ Quando('quero vender uma moto') do
 end
 
 Entao('sou redirecionado para anunciar a moto') do
-  expect(page).to have_text 'Anuncie e venda sua moto pelo melhor preço'
+  expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-moto?lkid=1020', url: true)
   take_screenshot('menu_vender', 'vender_moto')
 end
 

@@ -2,9 +2,10 @@ class CarFilters < SitePrism::Page
   element :click_offerts, '.Button--red-home'
   element :upper_tittle, '.title-search'
   element :filter_validate, 'label[data-testid="filter_Opportunities_superPreco"]'
-  elements :brand_selector, '.CardMake__name-make'
-  element :all_model_selector, '.Filters__line--gray'
+  element :brand_selector, :xpath, '//*[@data-qa="filter_make_card_honda"]'
+  element :all_model_selector, '.Filters__line.Filters__line--gray.Filters__line--icon.Filters__line--icon--right'
   element :model_select, 'a[class*="Filters__line"][href*="civic"]'
+  element :filter_versao, '.Filters__line.Filters__line--icon.Filters__line--icon.Filters__line--icon--right.Filters__line--gray'
   element :version_select, 'a[class*="Filters__line"][href*="20-exr-16v-flex-4p-automatico"]'
   element :from_year_field, 'input[name="anode"]'
   element :to_year_field, 'input[name="anoate"]'
@@ -13,11 +14,14 @@ class CarFilters < SitePrism::Page
   # filtros
   element :color_select, '.Filters__container__group:nth-child(16) > .Filters__line'
   element :slide_close, '.SlideLeft--opened .Filters__back'
+  element :marca_carro_chevrolet, :xpath, '//*[@data-qa="filter_make_card_chevrolet"]'
+  element :filtro_super_preco, :xpath, '//*[@data-qa="filter_opportunity_superPreco"]'
   # checkbox
   element :color_white, :xpath, '/html/body/div[1]/main/div[1]/div[2]/div/div[17]/div/div[3]/div[3]/label'
   element :color_black, :xpath, '/html/body/div/main/div[1]/div[2]/div/div[17]/div/div[3]/div[7]/label'
   element :license_plate, '.Filters__container__group:nth-child(13) > .Form__InputRow:nth-child(2) > .Checkbox'
   element :all_brands, '.CarouselContainer.undefined'
+
 
   def oferta_carros
     click_offerts.click
@@ -33,17 +37,14 @@ class CarFilters < SitePrism::Page
   end
 
   def selecionar_marca_carro
-    scroll_to_element(all_brands)
-    brand_selector[3].click
+    scroll_to_element(filtro_super_preco)
+    marca_carro_chevrolet.click
   end
 
   def selecionar_modelo_carro
     wait_until_all_model_selector_visible
     all_model_selector.click
-    if wait_until_model_select_visible
-      model_select.click
-      page.refresh
-    end
+    click_link "CELTA"
   end
 
   def selecionar_versao
@@ -98,10 +99,8 @@ class CarFilters < SitePrism::Page
   end
     
   def selecionar_versao
-    wait_until_all_model_selector_visible
-    all_model_selector.click
-    wait_until_version_select_visible
-    version_select.click
+    filter_versao.click
+    click_link "1.0 MPFI SUPER 8V GASOLINA 2P MANUAL"
   end
 
   def preencher_ano

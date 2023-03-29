@@ -15,7 +15,7 @@ end
 
 Quando('seleciono um anúncio') do
   # Remover autocompletar de localização
-  location.remove_locator
+  #location.remove_locator
   expect(page).to have_text 'Novos e Usados'
   # Escolhendo um item do catálogo e validação
   favorite.choose_item
