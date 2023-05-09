@@ -8,5 +8,5 @@ After do |scn|
     type: Allure::ContentType::PNG,
     test_case: true
   )
-  Capybara.current_session.driver.quit
+  Capybara.reset_session!
 end
