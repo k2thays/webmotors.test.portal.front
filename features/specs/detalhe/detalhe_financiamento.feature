@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @rodartudo
+@smoke
 Funcionalidade: Validar simulação de financiamento
       Eu como Usuario
   Quero simular um financiamento
