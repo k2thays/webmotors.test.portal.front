@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke
+@smoke @menu_ajuda
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero navegar menu superior
@@ -18,8 +18,9 @@ Funcionalidade: Webmotors Web
     | ajuda         |
     | Para Você     |
     | Para sua Loja |
+    | Segurança     |
 
-  @pending @menu_ajuda_logado
+  @menu_ajuda_logado
   Esquema do Cenário: Menu Ajuda
     E faço login com "albin@putsbox.com" e "@TesteQA1"
     Quando quero acessar o menu "<ajuda>"
@@ -28,3 +29,4 @@ Funcionalidade: Webmotors Web
     | ajuda           |
     | Para Você       |
     | Para a sua Loja |
+    | Segurança       |

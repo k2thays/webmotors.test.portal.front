@@ -11,7 +11,7 @@ Funcionalidade: Verificar anuncios de um mesmo vendedor
     Dado que estou na home da webmotors
 
   @anuncios_vendedor
-  Cenário: 
+  Cenário: Validar lista de anuncios de um vendedor expecifico
     Quando verifico todos anuncios de um vendedor
     Entao sou redirecionado para a lista de anuncios
  

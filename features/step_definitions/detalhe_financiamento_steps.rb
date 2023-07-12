@@ -16,6 +16,13 @@ Entao('devo visualizar as condições oferecidas') do
   expect(page).to have_text("melhores condições")
 end
 
+Quando('seleciono um anúncio da página') do
+  expect(page).to have_text 'Chevrolet: Carros usados, seminovos e novos | Webmotors'
+  favorite.choose_item
+  home_page.alterar_aba
+  expect(page).to have_text 'Sobre o vendedor'
+end
+
 Quando('não preencho todos os campos') do |table|
   # table is a Cucumber::MultilineArgument::DataTable
   user = table.hashes[0]
@@ -25,4 +32,13 @@ end
 Entao('o botão fica desabilitado') do
   expect(page).to have_button('Ver Parcelas', disabled: true)
   take_screenshot('financiamento', 'financimento_dados_incompleto')
+end
+
+Quando('preencho com um campo inválido') do |table|
+  user = table.hashes[0]
+  installment.fill_form_fail_financiamento(user)
+end 
+
+Entao('a mensagem de erro é exibida {string}') do |string|
+  expect(page).to have_text(string)
 end

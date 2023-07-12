@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke
+@smoke @menucomprar
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero navegar menu superior
@@ -10,6 +10,7 @@ Funcionalidade: Webmotors Web
   Contexto:
     Dado que estou na home da webmotors
 
+  #adicionar validação da tag no RB para usados, novos, vistoriados
   @menu_comprar
   Esquema do Cenário: Menu Comprar
     Quando acessar o "<menu>" superior para comprar
