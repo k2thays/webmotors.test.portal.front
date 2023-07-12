@@ -32,7 +32,7 @@ class Complaint < SitePrism::Page
     input_name.set "Silvio Santos"
     input_email.set Faker::Internet.email
     reason_select.select('Preço Irregular')
-    input_msg.set 'Teste Campo de Mensagem'
+    input_msg.set 'Enviando uma mensagem para rtealizar uma denuncia em ambiente de teste'
     checkbox.click
     wait_until_button_send_visible
     button_send.click

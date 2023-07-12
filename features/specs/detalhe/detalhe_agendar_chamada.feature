@@ -17,8 +17,8 @@ Funcionalidade: Validar agendamento de chamada de video
     E seleciono período
     Entao exibe mensagem de que foi agendado
     Exemplos:
-    | Nome | Email         | Telefone    |
-    | Ana  | ana@gmail.com | 14999999999 |
+    | Nome             | Email         | Telefone    |
+    | Ana Maria Braga  | ana@gmail.com | 14999999999 |
 
   @agendar_chamada_video_fail @corrigido
   Esquema do Cenário: Validar agendamento de chamada de video dados invalidos
@@ -27,5 +27,5 @@ Funcionalidade: Validar agendamento de chamada de video
     E seleciono período
     Entao fico impossibilitado de continuar
     Exemplos:
-    | Nome | Email          | Telefone    |
-    | Ana  | ana##gmail.com | 14999999999 |
+    | Nome            | Email          | Telefone    |
+    | Ana Maria Braga | ana##gmail.com | 14999999999 |

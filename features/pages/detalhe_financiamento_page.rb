@@ -11,10 +11,10 @@ class Installment < SitePrism::Page
   element :input_valor, 'input[data-qa="inputIntakeFinancing"]'
  
   def fill_form_financiamento
-    input_name.set "Michel Jackeson"
-    input_email.set Faker::Internet.email
+    input_name.set "Caio Castro"
+    input_email.set "Caiocastro@gmail.com"
     input_phone.set '11992176665'
-    input_birthday.set '19111956'
+    input_birthday.set '10101980'
     input_cpf.set '32523509806'
     location_select.select('São Paulo')
   end

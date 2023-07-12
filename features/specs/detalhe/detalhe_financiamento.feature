@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke
+@smoke @rodartudo
 Funcionalidade: Validar simulação de financiamento
       Eu como Usuario
   Quero simular um financiamento
@@ -28,12 +28,12 @@ Funcionalidade: Validar simulação de financiamento
     Exemplos:
       | nome_input         | email_input     | telefone_input | nascimento_input | cpf_input   | estado_input        |
       |                    | teste@gmail.com | 45986808277    | 01/01/1990       | 02130822339 | São Paulo           |
-      | Clarice  Automação |                 | 45986808277    | 01/01/1990       | 02130822339 | São Paulo           |
-      | Clarice  Automação | teste@gmail.com |                | 01/01/1990       | 02130822339 | São Paulo           |
-      | Clarice  Automação | teste@gmail.com | 45986808277    |                  | 02130822339 | São Paulo           |
-      | Clarice  Automação | teste@gmail.com | 45986808277    | 01/01/1990       |             | São Paulo           |
-      | Clarice  Automação | teste@gmail.com | 45986808277    | 01/01/1990       | 02130822339 | Selecione um estado |
-      | Clarice  Automação | teste@gmail.com | 4520909856     | 01/01/1990       | 02130822339 | São Paulo           |
+      | Clarice  Lispector |                 | 45986808277    | 01/01/1990       | 02130822339 | São Paulo           |
+      | Clarice  Lispector | teste@gmail.com |                | 01/01/1990       | 02130822339 | São Paulo           |
+      | Clarice  Lispector | teste@gmail.com | 45986808277    |                  | 02130822339 | São Paulo           |
+      | Clarice  Lispector | teste@gmail.com | 45986808277    | 01/01/1990       |             | São Paulo           |
+      | Clarice  Lispector | teste@gmail.com | 45986808277    | 01/01/1990       | 02130822339 | Selecione um estado |
+      | Clarice  Lispector | teste@gmail.com | 4520909856     | 01/01/1990       | 02130822339 | São Paulo           |
 
   @financiamento_validacao_mens_erro
   Esquema do Cenário: Validar mensagem de erro para campo nome com apenas primeiro nome

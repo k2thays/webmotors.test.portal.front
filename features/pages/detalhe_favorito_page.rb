@@ -21,15 +21,12 @@ class Favorite < SitePrism::Page
   def card_favoritar_desfavoritar
     wait_until_icon_favoritar_visible
     icon_favoritar[5].click
-    sleep 3
     wait_until_fav_contagem_visible
     icon_favoritar[5].click
-    sleep 3
   end 
 
   def validar_icon_favorito
     button = icon_favoritar[5]
-    #binding.pry
     unless button.disabled?
       puts "O icone de favoritar esta desabilitado"
     else
