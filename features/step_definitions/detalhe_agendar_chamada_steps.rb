@@ -4,7 +4,7 @@ Quando('desejo agendar uma video chamada') do
 
   # Escolhendo um item
   home_page.alterar_aba
-  expect(page).to have_text 'Carros Usados e Seminovos em Todo o Brasil'
+  expect(page).to have_text 'Carros Novos e Usados em Todo o Brasil'
   seller.choose_car
   # Asserts de validação
   home_page.alterar_aba

@@ -16,7 +16,7 @@ end
 Quando('seleciono um anúncio') do
   # Remover autocompletar de localização
   #location.remove_locator
-  expect(page).to have_text 'Novos e Usados'
+  expect(page).to have_text 'Chevrolet: Carros usados, seminovos e novos | Webmotors'
   # Escolhendo um item do catálogo e validação
   favorite.choose_item
   home_page.alterar_aba
@@ -50,7 +50,6 @@ end
 
 Entao('o anuncio é favoritado') do
   # Assert via css, dentro do item selecionado
-  #expect(page).to has_i '#VehicleBasicInformationTitle'
   take_screenshot('favoritado', 'carro_favorito')
 end
 
@@ -58,4 +57,22 @@ Entao('vejo o anuncio favoritado') do
   # Assert após click de favorito
   expect(page).to have_css '.sc-gqPbQI.ldOiUz:nth-child(2) .sc-jzJRlG.dVKAHr'
   take_screenshot('favoritado_listagem', 'lista_carros_favoritado')
+end
+
+Dado('faço o login como {string} e {string}') do |email, password|
+  home_page.menu_login
+  home_page.login_usuario
+  favorite.fill_login(email, password)
+end
+
+Dado('acesso a tela de resultado de busca') do
+  carfilters.oferta_carros
+end
+
+Quando('favorito um anuncio e desfavorito em seguida') do
+  favorite.card_favoritar_desfavoritar
+end
+
+Então('o anuncio fica desfavoritado') do
+  favorite.validar_icon_favorito
 end

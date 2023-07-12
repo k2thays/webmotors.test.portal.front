@@ -37,6 +37,7 @@ class HomePage < SitePrism::Page
   element :upper_help, :xpath, '//*[@data-qa="header_help"]'
   element :upper_foryou, :xpath, '//*[@data-qa="header_help_you"]'
   element :upper_forstore, :xpath, '//*[@data-qa="header_help_store"]'
+  element :upper_security, :xpath, '//*[@data-qa="header_help_security"]'
 
   # Menu Superior de Serviços
   element :services_upper_menu, :xpath, '//*[@data-qa="header_services"]'
@@ -175,6 +176,10 @@ class HomePage < SitePrism::Page
     upper_forstore.click
   end
 
+  def ajuda_seguranca
+    upper_security.click
+  end  
+
   def menu_servicos
     services_upper_menu.hover
   end
@@ -246,6 +251,7 @@ class HomePage < SitePrism::Page
     fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
     acept_cookie.click if page.has_text?('Entendi', wait: 2)
+    
   end
 
   def validar_compra_certificada
