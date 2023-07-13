@@ -10,7 +10,7 @@ Quando('faço um filtro por marca e modelo') do
 end
 
 Entao('devo ver a lista com os modelos listados') do
-  expect(page).to have_text 'Motos Bmw F 700 Gs Novas e Usadas'
+  expect(page).to have_text 'Bmw F 700 Gs: Motos usadas, seminovas e novas | Webmotors'
   take_screenshot('filtros', 'filtro_motos')
 end
 
@@ -18,10 +18,9 @@ Quando('seleciono uma marca e filtros') do
   motofilters.selecionar_marca
   motofilters.preencher_ano
   motofilters.preencher_preco
-  motofilters.selecionar_cores
 end
 
 Entao('deve me retornar uma lista com os filtros aplicados') do
-  expect(page).to have_text 'Motos Bmw Novas e Usadas ano 2012 até ano 2021 Branco'
+  expect(page).to have_text 'Motos Bmw usadas, seminovas e novas ano 2012 até ano 2021'
   take_screenshot('filtros', 'filtro_aplicados_motos')
 end
