@@ -45,8 +45,4 @@ class MotoFilters < SitePrism::Page
     from_pricer.set '2000'
     to_pricer.set '50000'
   end
-
-  def selecionar_cores
-    color_select.click
-  end
 end

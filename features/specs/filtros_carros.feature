@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke
+@smoke @filtros
 Funcionalidade: Webmotors Web
   Eu como Usuario
   Quero conseguir navegar pelo site

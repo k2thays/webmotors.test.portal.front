@@ -4,7 +4,7 @@ Quando('verifico todos anuncios de um vendedor') do
 
   # Escolhendo um item
   home_page.alterar_aba
-  expect(page).to have_text 'Carros Usados e Seminovos em Todo o Brasil'
+  expect(page).to have_text 'Carros usados e seminovos em todo o Brasil | Webmotors'
   seller.choose_car
 
   # Ver todos os carros desse vendedor
