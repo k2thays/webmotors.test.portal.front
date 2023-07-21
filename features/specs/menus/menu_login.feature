@@ -16,5 +16,16 @@ Esquema do Cenário: Menu Login
   Entao sou direcionado para a página de "<login>"
   Exemplos:
   | login              |
-  | Logar ou Cadastrar |
-  | Sou Revendedor     |
+  | Login              |
+  | Sou lojista        |
+
+  @sub_menu_login
+  Esquema do Cenário: Sub-Menu Login - Logado
+  E faço login como "albin@putsbox.com" e "@TesteQA1"
+  Quando acessar o sub-menu de login "<sub_menu>"
+  Entao sou direcionado para a página do "<sub_menu>"
+  Exemplos:
+  | sub_menu        |
+  | Meus anúncios   |
+  | Minha conta     |
+  | Produtos        |
