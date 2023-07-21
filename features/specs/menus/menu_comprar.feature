@@ -16,17 +16,17 @@ Funcionalidade: Webmotors Web
     Quando acessar o "<menu>" superior para comprar
     Entao deve retorna uma lista com os veiculos disponiveis "<menu>"
     Exemplos:
-    | menu               |
-    | Carros usados      |
-    | Carros novos       |
-    | Motos usadas       |
-    | Motos novas        |
-   #| Compra certificada | no momento, não temos massa de dados para esse teste
+    | menu           |
+    | Carros usados  |
+    | Carros novos   |
+    | Motos usadas   |
+    | Motos novas    |
+    | Vistoriado     |
 
-@menu_comprar_compra_certificada
-  Esquema do Cenário: Menu Comprar
+@menu_comprar_vistoriado
+  Esquema do Cenário: Menu comprar vistoriado
     Quando acessar o "<menu>" superior para comprar
-    Entao deve retorna uma lista com os veiculos disponiveis da compra certificada
+    Entao deve retorna uma lista com os veiculos disponiveis de vistoriado
     Exemplos:
-    | menu               |
-    | Compra certificada |
+    | menu       |
+    | Vistoriado |
