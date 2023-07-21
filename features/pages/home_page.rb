@@ -53,6 +53,12 @@ class HomePage < SitePrism::Page
   element :upper_login, :xpath, '//*[@data-qa="header_btn_login"]'
   element :upper_login_dealer, :xpath, '//*[@data-qa="header_btn_cockpit"]'
   element :closed_modal_login,  :xpath, '//*[@data-qa="login-popover-close-btn"]'
+  element :menu_meus_anuncios, :xpath, '//*[@data-qa="header_logIn_myAds"]'
+  element :menu_minha_conta, :xpath, '//*[@data-qa="header_logIn_myAccount"]'
+  element :menu_produtos, :xpath, '//*[@data-qa="header_logIn_products"]'
+  
+
+  
 
   # Menu Superior de Notificações
   element :notification_upper_menu, :xpath, '//*[@data-qa="btn_header_notifications"]'
@@ -222,7 +228,7 @@ class HomePage < SitePrism::Page
 
   def menu_login
     wait_until_closed_modal_login_visible
-    closed_modal_login.click  
+    closed_modal_login.click
     login_upper_menu.hover
   end
 
@@ -251,11 +257,27 @@ class HomePage < SitePrism::Page
     fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
     acept_cookie.click if page.has_text?('Entendi', wait: 2)
-    
   end
 
   def validar_vistoriado
     wait_until_tag_vistoriado_visible
-  end
+  end  
 
+  def acessar_sub_menu_logado(sub_menu)
+    if sub_menu.eql?('Meus anúncios')
+      login_upper_menu.hover
+      menu_meus_anuncios.click
+      alterar_aba
+    end
+    if sub_menu.eql?('Minha conta')
+      login_upper_menu.hover
+      menu_minha_conta.click
+      alterar_aba
+    end
+    if sub_menu.eql?('Produtos')
+      login_upper_menu.hover
+      menu_produtos.click
+      alterar_aba
+    end
+  end   
 end
