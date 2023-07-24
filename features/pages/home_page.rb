@@ -46,7 +46,7 @@ class HomePage < SitePrism::Page
   element :upper_assurance, :xpath, '//*[@data-qa="header_services_insurance"]'
   element :upper_dealers,  :xpath, '//*[@data-qa="header_services_dealer_platform"]'
   element :upper_financial, :xpath, '//*[@data-qa="header_services_financing"]'
-  element :upper_buy_certificada, :xpath, '//*[@data-qa="header_services_certified_purchase"]'
+  element :upper_vistoriado, :xpath, '//*[@data-qa="header_services_inspected"]'
 
   # Menu Superior de Login
   element :login_upper_menu, :xpath, '//*[@data-qa="btn_header_login"]'
@@ -214,8 +214,8 @@ class HomePage < SitePrism::Page
     upper_financial.click
   end
 
-  def servicos_noticiaswm
-    upper_buy_certificada.click
+  def servicos_vistoriado
+    upper_vistoriado.click
   end
 
   def servicos_compra_segura
@@ -256,6 +256,8 @@ class HomePage < SitePrism::Page
   def aceitar_coockies
     fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
+    find('.sv__minimized__text').click if page.has_text?('Queremos te conhecer melhor! Conta pra gente o que você tá fazendo aqui!', wait: 2)
+    find('.sv-col-small-button-bw.sv__btn-close').click if page.has_text?('O que está procurando hoje?', wait: 2)
     acept_cookie.click if page.has_text?('Entendi', wait: 2)
   end
 

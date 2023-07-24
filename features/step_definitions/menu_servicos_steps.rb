@@ -5,7 +5,7 @@ Quando('quero acessar o menu de {string}') do |menu_servico|
   home_page.servicos_seguros if menu_servico.eql?('Seguro veículo')
   home_page.servicos_revendedores if menu_servico.eql?('Plataforma Revendedores')
   home_page.servicos_financiamento if menu_servico.eql?('Financiamento')
-  home_page.servicos_noticiaswm if menu_servico.eql?('Compra certificada')
+  home_page.servicos_vistoriado if menu_servico.eql?('Vistoriado')
   home_page.alterar_aba
 end
 
@@ -27,8 +27,8 @@ Entao('devo ser direcionado para a area de {string}') do |menu_servico|
   when 'Financiamento'
     expect(page).to have_current_path('https://hportal.webmotors.com.br/financiamento?lkid=1011', url: true)
 
-  when 'Compra certificada'
-    expect(page).to have_current_path('https://www.webmotors.com.br/compracertificada?lkid=1577', url: true)
+  when 'Vistoriado'
+    expect(page).to have_current_path('https://www.cockpit.com.br/solutions/vistoriado?lkid=1577', url: true)
   end
-  take_screenshot('menu_servicos', 'servicos')
+  take_screenshot('menu_servicos', 'sub-menus')
 end

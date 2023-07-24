@@ -1,14 +1,13 @@
 class LatestSearch < SitePrism::Page
-  element :back_homepage, '.right-container'
-  element :last_search, :xpath, '//*[@data-testid="LastSearchCard"]'
+  element :back_homepage, '._IVZOj'
+  element :last_search, :xpath, '//*[@data-qa="last_search_card_1"]'
   element :last_search_text, '.sc-dSuTWQ.jXQjZm'
-  element :car_select, :xpath, '//*[@data-qa="Autocomplte_DropItem_Model"]'
+  element :car_select, :xpath, '//*[@data-qa="Autocomplete_DropItem_Model"]'
   element :input_busca, :xpath, '//*[@data-qa="Input_Autocomplete"]'
 
 
   def voltar_homepage
     back_homepage.click
-    last_search_text.visible?
   end
 
   def selecionar_ultima_busca

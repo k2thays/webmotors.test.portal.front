@@ -50,4 +50,8 @@ module PageObjects
   def lead
     Lead.new
   end  
+
+  def detalhe_anuncio
+    DetalheAnuncio.new
+  end   
 end

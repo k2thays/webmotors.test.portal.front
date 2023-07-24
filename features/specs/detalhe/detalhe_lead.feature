@@ -36,7 +36,6 @@ Funcionalidade: Validar envio lead Simples
     |                   | pitanguinha@gmail.com | 14999999999    | Mensagem de teste |
     | Silvio Santos     |                       | 14999999999    | Mensagem de teste |
     | Silvio Santos     | pitanguinha@gmail.com |                | Mensagem de teste |
-    | Silvio Santos     | pitanguinha@gmail.com | 14999999999    |                   |
 
   @denunciar_anuncio
   Esquema do Cenário: Denunciar um anuncio
