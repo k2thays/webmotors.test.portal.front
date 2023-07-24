@@ -1,5 +1,4 @@
 Quando('clico em {string}') do |string|
-    binding.pry
     click_button string
 end
   
