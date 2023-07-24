@@ -31,9 +31,8 @@ Funcionalidade: Webmotors Web
     | Gerenciar meu anúncio   |
     | Plataforma revendedores |
 
-# na manutenção não incluir validação de texto para a opção de plataforma revendedor. Somente a URL ja basta
   @menu_vender_logado
-  Esquema do Cenário: Estando Logado Acessar Menu Superior para Vender
+  Esquema do Cenário: Logado - Acessar Menu Superior para Vender
     E faço login com "albin@putsbox.com" e "@TesteQA1"
     Quando quero acessar o "<menu>" superior para vender
     Entao sou redirecionado para a página do "<menu>" escolhido logado
