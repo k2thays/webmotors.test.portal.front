@@ -18,8 +18,7 @@ Entao('devo ser direcionado para a area de {string}') do |menu_servico|
     expect(page).to have_current_path('https://hportal.webmotors.com.br/catalogo?lkid=1012', url: true)
 
   when 'Seguro veículo'
-    expect(page).to have_current_path('https://www.autocompara.com.br/?lkid=1015', url: true)
-    # vai mudar para https://www.autocompara.com.br/?utm_source=webmotors&utm_medium=site&utm_campaign=Menu_Servicos_Seguro_Veiculo
+    expect(page).to have_current_path('https://www.autocompara.com.br/?lkid=1015&utm_source=webmotors&utm_medium=site&utm_campaign=menu_servicos_seguro_veiculo', url: true)
 
   when 'Plataforma Revendedores'
     expect(page).to have_current_path('https://www.cockpit.com.br/?lkid=1017', url: true)
