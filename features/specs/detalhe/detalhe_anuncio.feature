@@ -14,7 +14,7 @@ Funcionalidade: Validar visualização de telefone do anúncio
   Esquema do Cenário: Visualizar telefone do anunciante
     E faço a busca por um "<modelo>"
     E seleciono um anúncio
-    Quando clico em "Ver Telefone"
+    Quando clico em ver telefone
     Entao visualizo o telefone completo do anunciante
     Exemplos:
     | modelo      |
@@ -24,11 +24,11 @@ Funcionalidade: Validar visualização de telefone do anúncio
   @detalhe_vistoriado
   Cenário: Visualizar Laudo
     E acesso um anuncio que tenha laudo
-    Quando clico em "Visualizar laudo"
+    Quando clico em visualizar laudo
     Entao sou direcionado para o PDF do laudo
 
   @detalhe_vistoriado_saiba_mais
-  Cenário: Visualizar Laudo
+  Cenário: Validar botão de Saiba Mais
     E acesso um anuncio que tenha laudo
     Quando clico em Saiba mais
     Entao sou direcionado para a LP do laudo

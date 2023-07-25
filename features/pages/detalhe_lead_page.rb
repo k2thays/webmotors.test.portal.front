@@ -24,19 +24,23 @@ class Lead < SitePrism::Page
   end
 
   def verificar_popup
-    lead.button_chamada_video.hover
-    lead.button_ver_telefone.hover
+    button_chamada_video.hover
+    button_ver_telefone.hover
     home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 4)
   end
 end 
 
 class Complaint < SitePrism::Page
+
   element :input_name, 'form[class*="advert__middle"] input[name="fullName"]'
   element :input_email, 'form[class*="advert__middle"] input[name="email"]'
   element :reason_select, 'select[id="ReasonReportAdvert"]'
   element :input_msg, 'div[id="ReportAdvert"] textarea[name="message"]'
   element :checkbox, '#check-complaint'
   element :button_send, '#ButtonSendReportAdvert'
+  element :button_chamada_video,  :xpath, '//*[@data-qa="btn_schedule_video_call"]'
+  element :button_ver_telefone, '#CardSellerPhoneViewPrivate'
+
  
 
   def fill_form
