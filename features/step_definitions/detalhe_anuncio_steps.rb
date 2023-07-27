@@ -1,5 +1,5 @@
-Quando('clico em ver telefone') do
-    detalhe_anuncio.ver_telefone.click
+Quando('clico em {string}') do |string|
+    click_button string
 end
   
 Entao('visualizo o telefone completo do anunciante') do
@@ -10,8 +10,8 @@ Quando('acesso um anuncio que tenha laudo') do
     visit 'https://hportal.webmotors.com.br/comprar/nissan/frontier/23-16v-turbo-diesel-attack-cd-4x4-automatico/4-portas/2021/26032961?pos=b26032961m:&np=1'
 end
 
-Quando('clico em visualizar laudo') do
-    detalhe_anuncio.button_ver_laudo.click
+Quando('clico em {string}') do |string|
+   click_link string
 end    
 
 Entao('sou direcionado para o PDF do laudo') do
@@ -34,7 +34,6 @@ E('acesso um anuncio que tenha 360') do
 end 
 
 Quando('clico em ver 360') do 
-    schedule.fechar_modal_DA
     detalhe_anuncio.button_360.click
 end     
 

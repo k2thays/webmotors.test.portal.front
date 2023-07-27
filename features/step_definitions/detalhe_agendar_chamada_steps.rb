@@ -20,6 +20,7 @@ Quando('informo o {string}, {string} e {string} para agendar') do |nome, email, 
 end
 
 Quando('seleciono período') do
+  home_page.aceitar_coockies
   # Escolhendo Dia e Hora
   schedule.select_date
 end
