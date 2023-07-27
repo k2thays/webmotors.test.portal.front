@@ -12,7 +12,7 @@ end
 Quando('acessar o detalhe de um dos veiculos') do
   # Remover autocompletar de localização
   location.remove_locator
-  expect(page).to have_text 'Novos e Usados'
+  expect(page).to have_text 'Honda: Carros usados, seminovos e novos | Webmotors'
   seller.choose_car
   home_page.alterar_aba
 end

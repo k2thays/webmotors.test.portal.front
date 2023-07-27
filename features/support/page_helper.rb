@@ -46,4 +46,12 @@ module PageObjects
   def latestsearch
     LatestSearch.new
   end
+
+  def lead
+    Lead.new
+  end  
+
+  def detalhe_anuncio
+    DetalheAnuncio.new
+  end   
 end

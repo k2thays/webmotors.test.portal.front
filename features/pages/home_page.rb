@@ -15,7 +15,7 @@ class HomePage < SitePrism::Page
   elements :favorite_heart, '.sc-bbmXgH.MCVGq'
   element :acept_cookie, :xpath, '//*[@data-qa="btn_understoodCookieWarn"]'
   element :list_car_rb, :xpath, '//*[@data-qa="vehicle_list_container"]'
-  element :tag_compra_certificada, :xpath, '//*[@data-qa="filter_result_compra-certificada"]'
+  element :tag_vistoriado, '.sc-kTUwUJ.iaMkDi'
 
   # Menu superior de Compra
   element :buy_upper_menu, :xpath, '//*[@data-qa="header_buy"]'
@@ -23,7 +23,7 @@ class HomePage < SitePrism::Page
   element :upper_new_car, :xpath, '//*[@data-qa="header_buy_car_new"]'
   element :upper_used_bikes, :xpath, '//*[@data-qa="header_buy_bike_used"]'
   element :upper_new_bikes, :xpath, '//*[@data-qa="header_buy_bike_new"]'
-  element :upper_buy_certified, :xpath, '//*[@data-qa="header_buy_certified_purchase"]'
+  element :upper_buy_vistoriado, :xpath, '//*[@data-qa="header_buy_inspected"]'
   element :upper_buy_safebuy, '.Menu-User__list-links__navigation__item__sub__item:nth-child(2) > #navigationSafeBuy'
 
   # Menu Superior de Venda
@@ -37,6 +37,7 @@ class HomePage < SitePrism::Page
   element :upper_help, :xpath, '//*[@data-qa="header_help"]'
   element :upper_foryou, :xpath, '//*[@data-qa="header_help_you"]'
   element :upper_forstore, :xpath, '//*[@data-qa="header_help_store"]'
+  element :upper_security, :xpath, '//*[@data-qa="header_help_security"]'
 
   # Menu Superior de Serviços
   element :services_upper_menu, :xpath, '//*[@data-qa="header_services"]'
@@ -45,13 +46,19 @@ class HomePage < SitePrism::Page
   element :upper_assurance, :xpath, '//*[@data-qa="header_services_insurance"]'
   element :upper_dealers,  :xpath, '//*[@data-qa="header_services_dealer_platform"]'
   element :upper_financial, :xpath, '//*[@data-qa="header_services_financing"]'
-  element :upper_buy_certificada, :xpath, '//*[@data-qa="header_services_certified_purchase"]'
+  element :upper_vistoriado, :xpath, '//*[@data-qa="header_services_inspected"]'
 
   # Menu Superior de Login
   element :login_upper_menu, :xpath, '//*[@data-qa="btn_header_login"]'
   element :upper_login, :xpath, '//*[@data-qa="header_btn_login"]'
-  element :upper__login_dealer, :xpath, '//*[@data-qa="header_btn_cockpit"]'
+  element :upper_login_dealer, :xpath, '//*[@data-qa="header_btn_cockpit"]'
   element :closed_modal_login,  :xpath, '//*[@data-qa="login-popover-close-btn"]'
+  element :menu_meus_anuncios, :xpath, '//*[@data-qa="header_logIn_myAds"]'
+  element :menu_minha_conta, :xpath, '//*[@data-qa="header_logIn_myAccount"]'
+  element :menu_produtos, :xpath, '//*[@data-qa="header_logIn_products"]'
+  
+
+  
 
   # Menu Superior de Notificações
   element :notification_upper_menu, :xpath, '//*[@data-qa="btn_header_notifications"]'
@@ -131,8 +138,8 @@ class HomePage < SitePrism::Page
     upper_new_bikes.click
   end
 
-  def menu_compra_certificada
-    upper_buy_certified.click
+  def menu_vistoriado
+    upper_buy_vistoriado.click
   end
 
   def menu_compra_segura
@@ -175,6 +182,10 @@ class HomePage < SitePrism::Page
     upper_forstore.click
   end
 
+  def ajuda_seguranca
+    upper_security.click
+  end  
+
   def menu_servicos
     services_upper_menu.hover
   end
@@ -203,8 +214,8 @@ class HomePage < SitePrism::Page
     upper_financial.click
   end
 
-  def servicos_noticiaswm
-    upper_buy_certificada.click
+  def servicos_vistoriado
+    upper_vistoriado.click
   end
 
   def servicos_compra_segura
@@ -217,7 +228,7 @@ class HomePage < SitePrism::Page
 
   def menu_login
     wait_until_closed_modal_login_visible
-    closed_modal_login.click  
+    closed_modal_login.click
     login_upper_menu.hover
   end
 
@@ -226,7 +237,7 @@ class HomePage < SitePrism::Page
   end
 
   def login_revendedor
-    upper__login_dealer.click
+    upper_login_dealer.click
   end
 
   def menu_notificacoes
@@ -245,11 +256,30 @@ class HomePage < SitePrism::Page
   def aceitar_coockies
     fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
+    find('.sv__minimized__text').click if page.has_text?('Queremos te conhecer melhor! Conta pra gente o que você tá fazendo aqui!', wait: 2)
+    find('.sv-col-small-button-bw.sv__btn-close').click if page.has_text?('O que está procurando hoje?', wait: 2)
     acept_cookie.click if page.has_text?('Entendi', wait: 2)
   end
 
-  def validar_compra_certificada
-    wait_until_tag_compra_certificada_visible
-  end
+  def validar_vistoriado
+    wait_until_tag_vistoriado_visible
+  end  
 
+  def acessar_sub_menu_logado(sub_menu)
+    if sub_menu.eql?('Meus anúncios')
+      login_upper_menu.hover
+      menu_meus_anuncios.click
+      alterar_aba
+    end
+    if sub_menu.eql?('Minha conta')
+      login_upper_menu.hover
+      menu_minha_conta.click
+      alterar_aba
+    end
+    if sub_menu.eql?('Produtos')
+      login_upper_menu.hover
+      menu_produtos.click
+      alterar_aba
+    end
+  end   
 end

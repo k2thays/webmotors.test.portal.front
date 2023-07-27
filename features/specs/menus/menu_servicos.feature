@@ -21,4 +21,4 @@ Funcionalidade: Webmotors Web
     | Seguro veículo          |
     | Plataforma Revendedores |
     | Financiamento           |
-    | Compra certificada      |
+    | Vistoriado              |

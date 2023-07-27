@@ -38,3 +38,10 @@ Cenário: Validar favorito deslogado
   | Fiat       |
   | Chevrolet  |
   | Ford       |
+
+@desfavoritar_anuncio
+Cenário: Validar funcionalidade de desfavoritar logado
+  E faço o login como "albin@putsbox.com" e "@TesteQA1"
+  E acesso a tela de resultado de busca
+  Quando favorito um anuncio e desfavorito em seguida
+  Então o anuncio fica desfavoritado

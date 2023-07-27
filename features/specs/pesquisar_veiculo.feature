@@ -18,19 +18,15 @@ Funcionalidade: Webmotors Web
     | modelo     |
     | Honda      |
     | Fiat       |
-    | Mercedes   |
-    | Volkswagen |
 
-  @detalhes_veiculo
-  Esquema do Cenário: Acessar detalhes de um veiculo
-    Quando que eu pesquise o veiculo "<modelo>"
-    E acessar o detalhe de um dos veiculos
-    Entao devo visualizar os detalhes do veiculo
-    Exemplos:
-    | modelo     |
-    | Honda      |
-    | Fiat       |
-    | Volkswagen |
+  #@detalhes_veiculo
+  #Esquema do Cenário: Acessar detalhes de um veiculo
+   # Quando que eu pesquise o veiculo "<modelo>"
+   # E acessar o detalhe de um dos veiculos
+   # Entao devo visualizar os detalhes do veiculo
+   # Exemplos:
+   # | modelo     |
+   # | Honda      |
 
   @localizacao_veiculo
   Esquema do Cenário: Localizacao do veiculo

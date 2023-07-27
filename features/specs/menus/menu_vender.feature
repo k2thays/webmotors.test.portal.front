@@ -32,7 +32,7 @@ Funcionalidade: Webmotors Web
     | Plataforma revendedores |
 
   @menu_vender_logado
-  Esquema do Cenário: Estando Logado Acessar Menu Superior para Vender
+  Esquema do Cenário: Logado - Acessar Menu Superior para Vender
     E faço login com "albin@putsbox.com" e "@TesteQA1"
     Quando quero acessar o "<menu>" superior para vender
     Entao sou redirecionado para a página do "<menu>" escolhido logado
