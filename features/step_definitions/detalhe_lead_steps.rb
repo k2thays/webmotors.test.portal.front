@@ -7,7 +7,6 @@ end
 
 Entao('recebo a confirmação') do
   # Assert de confirmação
-  schedule.fechar_modal_DA
   home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
   expect(page).to have_text 'Mensagem enviada!'
   take_screenshot('envio_lead', 'Mensagem enviada!')
