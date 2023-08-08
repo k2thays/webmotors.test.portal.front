@@ -2,19 +2,19 @@ Quando('envio mensagem do lead') do
   home_page.alterar_aba
   # Preenchimento do formulário para enviar mensagem ao vendedor
   lead.fill_form
-  home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
+  #home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
 end
 
 Entao('recebo a confirmação') do
   # Assert de confirmação
-  home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
+  #home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
   expect(page).to have_text 'Mensagem enviada!'
   take_screenshot('envio_lead', 'Mensagem enviada!')
 end
 
 Quando('preencho somente alguns campos:') do |table|
   # table is a Cucumber::MultilineArgument::DataTable
-  home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
+  #home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
   user = table.hashes[0]
   lead.fill_form_fail(user)
 end
