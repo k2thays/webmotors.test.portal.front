@@ -1,6 +1,7 @@
 Quando('desejo agendar uma video chamada') do
-  js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26026425\');'
+  js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26027319\');'
   page.execute_script(js_script)
+  visit 'https://hportal.webmotors.com.br/comprar/spyker/c8-laviolette/42-coupe-v8-gasolina-2p-manual/3-portas/2010/26027319?pos=a26027319g:&np=1'
   description.validar_detalhes_veiculo
   click_button 'Agendar videochamada'
   expect(page).to have_text 'Informe os seus dados para agendar a videochamada'
@@ -11,7 +12,6 @@ Quando('informo o {string}, {string} e {string} para agendar') do |nome, email, 
 end
 
 Quando('seleciono período') do
-  home_page.aceitar_coockies
   schedule.select_date
 end
 

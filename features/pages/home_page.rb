@@ -254,7 +254,6 @@ class HomePage < SitePrism::Page
   end
 
   def aceitar_coockies
-    fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
     click_button 'OK' if page.has_text?('Aviso de Cookies', wait: 1)
     find('.sv__minimized__text').click if page.has_text?('Queremos te conhecer melhor! Conta pra gente o que você tá fazendo aqui!', wait: 2)
     find('.sv-col-small-button-bw.sv__btn-close').click if page.has_text?('O que está procurando hoje?', wait: 2)
