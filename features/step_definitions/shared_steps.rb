@@ -2,8 +2,6 @@ Dado('que estou na home da webmotors') do
   visit('')
   home_page.verificar_home
   home_page.aceitar_coockies
-  take_screenshot('Home', 'home web')
-
 end
 
 Dado('faço a busca por um {string}') do |modelo|
