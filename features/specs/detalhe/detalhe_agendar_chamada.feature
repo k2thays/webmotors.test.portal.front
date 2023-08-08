@@ -20,7 +20,7 @@ Funcionalidade: Validar agendamento de chamada de video
     | Nome             | Email         | Telefone    |
     | Ana Maria Braga  | ana@gmail.com | 14999999999 |
 
-  @agendar_chamada_video_fail
+  @agendar_chamada_video_fail @corrigido
   Esquema do Cenário: Validar agendamento de chamada de video dados invalidos
     Quando desejo agendar uma video chamada
     E informo o "<Nome>", "<Email>" e "<Telefone>" para agendar
