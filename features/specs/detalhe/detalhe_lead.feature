@@ -14,19 +14,14 @@ Funcionalidade: Validar envio lead Simples
     Dado que estou na home da webmotors
 
   @envio_lead
-  Esquema do Cenário: Enviar lead já preenchido
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
+    Cenário: Enviar lead já preenchido
+    E acesso um anuncio para envio de lead
     Quando envio mensagem do lead
     Entao recebo a confirmação
-    Exemplos:
-    | modelo     |
-    | Chevrolet  |
 
   @lead_falha
   Esquema do Cenário: Lead sem preencher os campos
-    E faço a busca por um "Chevrolet"
-    E seleciono um anúncio
+    E acesso um anuncio para envio de lead
     Quando preencho somente alguns campos:
     | nome         | email         | telefone         | mensagem         |
     | <nome_input> | <email_input> | <telefone_input> | <mensagem_input> |
@@ -38,12 +33,8 @@ Funcionalidade: Validar envio lead Simples
     | Silvio Santos     | pitanguinha@gmail.com |                | Mensagem de teste |
 
   @denunciar_anuncio
-  Esquema do Cenário: Denunciar um anuncio
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
+    Cenário: Denunciar um anuncio
+    E acesso um anuncio para envio de lead
     Quando denuncio um anúncio
     E preencho o formulario
     Entao exibe mensagem enviada com sucesso
-    Exemplos:
-    | modelo     |
-    | Chevrolet  |

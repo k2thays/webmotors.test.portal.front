@@ -9,7 +9,6 @@ class Lead < SitePrism::Page
   def fill_form
     button_chamada_video.hover
     button_ver_telefone.hover
-    #home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
     input_name_lead.set "Hebe Camargo"
     input_email_lead.set Faker::Internet.email
     input_phone_lead.set '11992176665'
@@ -24,9 +23,8 @@ class Lead < SitePrism::Page
   end
 
   def verificar_popup
-    lead.button_chamada_video.hover
-    lead.button_ver_telefone.hover
-    #home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 4)
+    button_chamada_video.hover
+    button_ver_telefone.hover
   end
 end 
 
@@ -37,6 +35,8 @@ class Complaint < SitePrism::Page
   element :input_msg, 'div[id="ReportAdvert"] textarea[name="message"]'
   element :checkbox, '#check-complaint'
   element :button_send, '#ButtonSendReportAdvert'
+  element :button_chamada_video,  :xpath, '//*[@data-qa="btn_schedule_video_call"]'
+  element :button_ver_telefone, '#CardSellerPhoneViewPrivate'
  
 
   def fill_form
