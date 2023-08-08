@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @todos
+@smoke @todos_laudo
 Funcionalidade: Validar visualização de telefone do anúncio
   Eu como Usuario
   Quero conseguir visualizar o teleone do anunciante
@@ -12,9 +12,8 @@ Funcionalidade: Validar visualização de telefone do anúncio
 
   @detalhe_telefone
   Esquema do Cenário: Visualizar telefone do anunciante
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
-    Quando clico em "Ver Telefone"
+    E visito a página de um anuncio
+    Quando clico em ver telefone
     Entao visualizo o telefone completo do anunciante
     Exemplos:
     | modelo      |
@@ -24,7 +23,7 @@ Funcionalidade: Validar visualização de telefone do anúncio
   @detalhe_vistoriado
   Cenário: Visualizar Laudo
     E acesso um anuncio que tenha laudo
-    Quando clico em "Visualizar laudo"
+    Quando clico em visualizar laudo
     Entao sou direcionado para o PDF do laudo
 
   @detalhe_vistoriado_saiba_mais
