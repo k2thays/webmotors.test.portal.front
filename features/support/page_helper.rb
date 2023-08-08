@@ -54,13 +54,4 @@ module PageObjects
   def detalhe_anuncio
     DetalheAnuncio.new
   end   
-
-  def footer
-    Footer.new
-  end   
-
-  def menu_noticias
-    MenuNoticias.new
-  end   
-
 end

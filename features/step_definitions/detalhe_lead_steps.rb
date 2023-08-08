@@ -1,21 +1,20 @@
-E('acesso um anuncio para envio de lead') do 
-  js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26027319\');'
-  page.execute_script(js_script)
-  visit 'https://hportal.webmotors.com.br/comprar/spyker/c8-laviolette/42-coupe-v8-gasolina-2p-manual/3-portas/2010/26027319?pos=a26027319g:&np=1'
-end   
-
 Quando('envio mensagem do lead') do
+  home_page.alterar_aba
   # Preenchimento do formulário para enviar mensagem ao vendedor
   lead.fill_form
+  home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
 end
 
 Entao('recebo a confirmação') do
   # Assert de confirmação
+  home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
   expect(page).to have_text 'Mensagem enviada!'
   take_screenshot('envio_lead', 'Mensagem enviada!')
 end
 
 Quando('preencho somente alguns campos:') do |table|
+  # table is a Cucumber::MultilineArgument::DataTable
+  home_page.fechar_modal.click if page.has_text?('Simule seu financiamento', wait: 2)
   user = table.hashes[0]
   lead.fill_form_fail(user)
 end

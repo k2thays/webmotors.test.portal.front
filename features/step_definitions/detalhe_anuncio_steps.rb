@@ -16,6 +16,7 @@ end
 Quando('acesso um anuncio que tenha laudo') do
     js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26032961\');'
     page.execute_script(js_script)
+
     visit 'https://hportal.webmotors.com.br/comprar/nissan/frontier/23-16v-turbo-diesel-attack-cd-4x4-automatico/4-portas/2021/26032961?pos=b26032961m:&np=1'
 end
 
@@ -50,6 +51,7 @@ Quando('clico em ver 360') do
 end     
 
 Então('vizualizo a foto disponível para 360') do 
+    #wait_until_imagem_360_visible
     detalhe_anuncio.button_fechar_360.visible?
     detalhe_anuncio.button_fechar_360.click
     take_screenshot('360', 'visualização de fotos')
