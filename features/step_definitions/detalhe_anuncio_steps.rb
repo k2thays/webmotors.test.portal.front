@@ -1,5 +1,11 @@
-Quando('clico em {string}') do |string|
-    click_button string
+E("acesso um anuncio para envio de lead") do 
+    js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26026425\');'
+    page.execute_script(js_script)
+    visit 'https://hportal.webmotors.com.br/comprar/peugeot/3008/16-16v-thp-gasolina-griffe-automatico/4-portas/2022/26026425?pos=l26026425g:&np=1'
+end     
+
+Quando('clico em ver telefone') do
+   detalhe_anuncio.btn_ver_telefone.click
 end
   
 Entao('visualizo o telefone completo do anunciante') do

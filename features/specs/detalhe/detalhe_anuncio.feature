@@ -11,14 +11,10 @@ Funcionalidade: Validar visualização de telefone do anúncio
     Dado que estou na home da webmotors
 
   @detalhe_telefone
-  Esquema do Cenário: Visualizar telefone do anunciante
-    E faço a busca por um "<modelo>"
-    E seleciono um anúncio
-    Quando clico em "Ver Telefone"
+  Cenário: Visualizar telefone do anunciante
+    E acesso um anuncio para envio de lead
+    Quando clico em ver telefone
     Entao visualizo o telefone completo do anunciante
-    Exemplos:
-    | modelo      |
-    | Chevrolet   |
 
   #CASO DE PROBLEMA DO LAUDO TROCAR MASSA
   @detalhe_vistoriado

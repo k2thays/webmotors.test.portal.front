@@ -3,4 +3,5 @@ class DetalheAnuncio < SitePrism::Page
     element :button_360, :xpath, '//*[@data-qa="car360-open-button"]'
     element :imagem_360, '#spincar-view'
     element :button_fechar_360, :xpath, '//*[@data-qa="car360-close-button"]'
+    element :btn_ver_telefone, '#CardSellerPhoneViewPrivate'
 end 
