@@ -15,11 +15,3 @@ Funcionalidade: Validar visualização de telefone do anúncio
     E acesso um anuncio para envio de lead
     Quando clico em ver telefone
     Entao visualizo o telefone completo do anunciante
-
-
-  # @detalhe_vistoriado_saiba_mais
-  # Cenário: Visualizar Laudo
-  #   E acesso um anuncio que tenha laudo
-  #   Quando clico em Saiba mais
-  #   Entao sou direcionado para a LP do laudo
-
