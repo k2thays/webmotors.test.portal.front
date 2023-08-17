@@ -28,10 +28,10 @@ Funcionalidade: Validar visualização de telefone do anúncio
     Quando clico em ver telefone
     Entao visualizo o telefone completo do anunciante
  
-  # @detalhe_vistoriado
-  # Cenário: Visualizar Laudo
-  #   E acesso um anuncio que tenha laudo
-  #   Quando clico em "Visualizar laudo"
-  #   Entao sou direcionado para o PDF do laudo
+  @detalhe_vistoriado
+  Cenário: Visualizar Laudo
+    E acesso um anuncio que tenha laudo
+    Quando clico em visualizar laudo
+    Entao sou direcionado para o PDF do laudo
 
 
