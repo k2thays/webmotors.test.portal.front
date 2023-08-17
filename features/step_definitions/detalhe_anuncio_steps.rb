@@ -38,9 +38,9 @@ Quando('clico em Saiba mais') do
 end     
 
 E('acesso um anuncio que tenha 360') do 
-    js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26033924\');'
+    js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26033938\');'
     page.execute_script(js_script)
-    visit 'https://hportal.webmotors.com.br/comprar/hyundai/creta/10-tgdi-flex-platinum-automatico/4-portas/2023/26033924?pos=i26033924g:&np=1'
+    visit 'https://hportal.webmotors.com.br/comprar/hyundai/coupe/20-fx-16v-2p-automatico/4-portas/2003/26033938?pos=k26033938g:&np=1'
 end 
 
 Quando('clico em ver 360') do 
