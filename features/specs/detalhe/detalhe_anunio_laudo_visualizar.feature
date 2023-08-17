@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke
+
 Funcionalidade: Validar visualização de telefone do anúncio
   Eu como Usuario
   Quero conseguir visualizar o teleone do anunciante
