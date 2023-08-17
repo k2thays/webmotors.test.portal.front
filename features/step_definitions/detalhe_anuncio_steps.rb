@@ -13,6 +13,8 @@ Entao('visualizo o telefone completo do anunciante') do
 end
 
 Quando('acesso um anuncio que tenha laudo') do
+    js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26032961\');'
+    page.execute_script(js_script)
     visit 'https://hportal.webmotors.com.br/comprar/nissan/frontier/23-16v-turbo-diesel-attack-cd-4x4-automatico/4-portas/2021/26032961?pos=b26032961m:&np=1'
 end
 
@@ -36,6 +38,8 @@ Quando('clico em Saiba mais') do
 end     
 
 E('acesso um anuncio que tenha 360') do 
+    js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'26033924\');'
+    page.execute_script(js_script)
     visit 'https://hportal.webmotors.com.br/comprar/hyundai/creta/10-tgdi-flex-platinum-automatico/4-portas/2023/26033924?pos=i26033924g:&np=1'
 end 
 
