@@ -10,7 +10,6 @@ Funcionalidade: Validar visualização de telefone do anúncio
   Contexto:
     Dado que estou na home da webmotors
 
-  #CASO DE PROBLEMA DO LAUDO TROCAR MASSA
   @detalhe_vistoriado
   Cenário: Visualizar Laudo
     E acesso um anuncio que tenha laudo
