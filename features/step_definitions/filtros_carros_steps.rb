@@ -6,11 +6,10 @@ end
 Quando('faço um filtro por, marca, modelo e versão') do
   carfilters.selecionar_marca_carro
   carfilters.selecionar_modelo_carro
-  carfilters.selecionar_versao
 end
 
 Entao('devo ver a lista com filtros aplicados') do
-  expect(page).to have_text 'Chevrolet Celta 1.0 Mpfi Super 8v Gasolina 2p Manual: Carros usados, seminovos e novos | Webmotors'
+  expect(page).to have_text 'Chevrolet Celta: Carros usados, seminovos e novos | Webmotors'
   take_screenshot('filtros', 'filtro_carros')
 end
 

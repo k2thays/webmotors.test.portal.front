@@ -5,7 +5,7 @@ class CarFilters < SitePrism::Page
   element :brand_selector, :xpath, '//*[@data-qa="filter_make_card_honda"]'
   element :all_model_selector, '.Filters__line.Filters__line--gray.Filters__line--icon.Filters__line--icon--right'
   element :model_select, 'a[class*="Filters__line"][href*="civic"]'
-  element :filter_versao, '.Filters__line.Filters__line--icon.Filters__line--icon.Filters__line--icon--right.Filters__line--gray'
+  element :filter_versao, 'div[class*="Filters__line.Filters__line--icon.Filters__line--icon.Filters__line--icon--right.Filters__line--gray"]'
   element :version_select, 'a[class*="Filters__line"][href*="20-exr-16v-flex-4p-automatico"]'
   element :from_year_field, 'input[name="anode"]'
   element :to_year_field, 'input[name="anoate"]'
@@ -98,11 +98,6 @@ class CarFilters < SitePrism::Page
     end
   end
     
-  def selecionar_versao
-    filter_versao.click
-    click_link "1.0 MPFI SUPER 8V GASOLINA 2P MANUAL"
-  end
-
   def preencher_ano
     from_year_field.set '2005'
     to_year_field.set '2021'

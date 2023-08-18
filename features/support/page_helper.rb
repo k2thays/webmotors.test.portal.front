@@ -54,4 +54,8 @@ module PageObjects
   def detalhe_anuncio
     DetalheAnuncio.new
   end   
+
+  def noticiasWM1
+    NoticiasWM1.new
+  end   
 end
