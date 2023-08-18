@@ -24,7 +24,7 @@ podTemplate(inheritFrom: 'agent-ruby') {
                     sh """
                         gem install bundler && bundle install
                         ruby webdrivers.rb
-                        parallel_cucumber -n 7 -o 'headless=true -t @smoke'
+                        parallel_cucumber -n 6 -o 'headless=true -t @smoke'
                       """
                       // cucumber headless=true -t @smoke
                   }
