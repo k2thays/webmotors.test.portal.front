@@ -26,7 +26,6 @@ end
 
 Quando('denuncio um anúncio') do
   # Botão de Denunciar
-  lead.verificar_popup
   click_button 'Denunciar este anúncio'
   expect(page).to have_text 'Denunciar anúncio'
 end
