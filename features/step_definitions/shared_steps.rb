@@ -28,15 +28,19 @@ end
 Entao('sou redirecionado para a página do {string} escolhido logado') do |menu_vender|
   case menu_vender
   when 'Vender carro'
-    expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-carro?lkid=1006', url: true)
+    expect(page).to have_text 'Vamos começar seu anúncio?'
+    expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-carro/especificacoes', url: true)
 
   when 'Vender moto'
-    expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-moto?lkid=1007', url: true)
+    expect(page).to have_text 'Vamos começar seu anúncio?'
+    expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-moto/especificacoes', url: true)
 
   when 'Gerenciar meu anúncio'
-    expect(page).to have_current_path('https://hportal.webmotors.com.br/login/?r=https://hportal.webmotors.com.br/garagem?lkid=1009', url: true)
+    expect(page).to have_text 'Meus Anúncios'
+    expect(page).to have_current_path('https://hportal.webmotors.com.br/garagem?lkid=1009', url: true)
 
   when 'Plataforma revendedores'
+    expect(page).to have_text 'Acesse já o Cockpit'
     expect(page).to have_current_path('https://www.cockpit.com.br/?lkid=1017', url: true)
   end
   take_screenshot('menu_vender', 'menu_vender')
