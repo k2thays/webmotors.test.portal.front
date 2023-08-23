@@ -58,4 +58,8 @@ module PageObjects
   def noticiasWM1
     NoticiasWM1.new
   end   
+
+  def footer
+    Footer.new
+  end   
 end
