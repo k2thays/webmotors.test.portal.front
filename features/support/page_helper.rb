@@ -59,7 +59,27 @@ module PageObjects
     NoticiasWM1.new
   end   
 
-  def footer
-    Footer.new
-  end   
+  def footerComprar
+    FooterComprar.new
+  end  
+  
+  def footerVender
+    FooterVender.new
+  end  
+  
+  def footerServicos
+    FooterServicos.new
+  end  
+
+  def footerNoticias
+    FooterNoticias.new
+  end  
+
+  def footerInstitucional
+    FooterInstitucional.new
+  end  
+
+  def footerAjuda
+    FooterAjuda.new
+  end  
 end
