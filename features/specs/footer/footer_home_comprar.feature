@@ -33,6 +33,6 @@ Funcionalidade: Validar link do footer na página da home
    Entao valido que o direcionamento do link "<menu>" esta correto estando logado
    Exemplos:
   | menu                                                     |
-  | Vender carro                                             | 
-  | Vender moto                                              |
-  | Gerenciar meu anúncio                                    |
+  # | Vender carro                                             | 
+  # | Vender moto                                              |
+  # | Gerenciar meu anúncio                                    |

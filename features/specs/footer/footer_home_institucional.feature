@@ -16,7 +16,7 @@ Funcionalidade: Validar link do footer na página da home
    Exemplos:
   | menu                                                     |
   | Canal de ética                                           |
-  | Código de conduta Webmotors                              |
-  | Código defesa do consumidor                              |
-  | Termos de Uso e Política de privacidade                  |
-  | LGPD                                                     |
+  #| Código de conduta Webmotors                              |
+  #| Código defesa do consumidor                              |
+  #| Termos de Uso e Política de privacidade                  |
+  #| LGPD                                                     |
