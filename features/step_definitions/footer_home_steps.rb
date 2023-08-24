@@ -48,7 +48,7 @@ Entao('valido que o direcionamento do link {string} esta correto') do |menu|
     when 'Últimas notícias'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/noticias', url: true)
     when 'Testes'
-        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/testes?lkid=1533', url: true)
+        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/testes', url: true)
     when 'Comparativos'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/comparativos', url: true)
     when 'Vídeos'

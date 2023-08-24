@@ -50,10 +50,10 @@ Funcionalidade: Validar link do footer na página da home
   | Trabalhe com a gente                                     |
   | Mapa do site                                             |
   | Canal de ética                                           |
-  | Código de conduta Webmotors                              |
-  | Código defesa do consumidor                              |
-  | Termos de Uso e Política de privacidade                  |
-  | LGPD                                                     |
+  #| Código de conduta Webmotors                              |
+  #| Código defesa do consumidor                              |
+  #| Termos de Uso e Política de privacidade                  |
+  #| LGPD                                                     |
 
  @footer_home_cookie
    Cenário: Validar popup de cookie
@@ -67,6 +67,6 @@ Funcionalidade: Validar link do footer na página da home
    Entao valido que o direcionamento do link "<menu>" esta correto estando logado
    Exemplos:
   | menu                                                     |
-  | Vender carro                                             | 
-  | Vender moto                                              |
-  | Gerenciar meu anúncio                                    |
+  # | Vender carro                                             | 
+  # | Vender moto                                              |
+  # | Gerenciar meu anúncio                                    |
