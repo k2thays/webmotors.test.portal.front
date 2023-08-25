@@ -1,4 +1,5 @@
 Quando('quero acessar o menu {string}') do |menu_ajuda|
+  home_page.aguardar_elemento_aparecer
   home_page.menu_ajuda
   case menu_ajuda
   when 'Para Você'
