@@ -36,3 +36,7 @@ Entao('valido que o direcionamento do link {string} esta correto estando logado'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/garagem', url: true)
     end 
 end     
+
+E('acesso o footer') do 
+    footerComprar.footer_rb.click
+end     

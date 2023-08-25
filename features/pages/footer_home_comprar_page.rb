@@ -9,6 +9,7 @@ class FooterComprar < SitePrism::Page
     element :vender_carro, :xpath, '//*[@data-qa="footer_sell_car"]'
     element :vender_moto, :xpath, '//*[@data-qa="footer_sell_bike"]'
     element :gerenciar_anuncio, :xpath, '//*[@data-qa="footer_sell_manage_ad"]'
+    element :footer_rb,  :xpath, '//*[@data-qa="toggle_footer"]'
 
 
 
