@@ -81,5 +81,10 @@ module PageObjects
 
   def footerAjuda
     FooterAjuda.new
-  end  
+  end
+  
+  def produto
+    ProdutosHome.new
+  end   
+
 end
