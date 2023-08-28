@@ -1,18 +1,17 @@
 # encoding: utf-8
 # language: pt
 
-@smoke @footer_rb
-Funcionalidade: Validar link do footer na página do Resultado de Busca
+@smoke @footer_da
+Funcionalidade: Validar link do footer na página de Detalhe do anuncio
   Eu como Usuario
   Quero conseguir navegar pelos links disponiveis no footer
 
   Contexto:
     Dado que estou na home da webmotors
 
- @footer_rb_comprar
+ @footer_DA_comprar
  Esquema do Cenário: Validar direcionamento dos links do footer Deslogado
-   E acesso a tela de resultado de busca
-   E acesso o footer
+   E acesso a tela do detalhe do anuncio
    Quando clicar no link "<menu>" do menu comprar
    Entao valido que o direcionamento do link "<menu>" de comprar esta correto
    Exemplos:
