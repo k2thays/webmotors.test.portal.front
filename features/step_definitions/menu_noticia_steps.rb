@@ -9,7 +9,7 @@ Entao('devo ser direcionado para a página do menu de {string}') do |menu_notici
     when 'Portal'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1?lkid=1549', url: true)
     when 'Últimas notícias'
-        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/noticias?lkid=1550', url: true)
+        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/noticias', url: true)
     when 'Testes'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/testes', url: true)
     when 'Comparativos'

@@ -1,4 +1,4 @@
-default: --publish-quiet -p format-default -p allure
+default: --publish-quiet -p format-default -p allure #--retry 1
 
 format-default: --no-source --color --format pretty
 allure: --format AllureCucumber::CucumberFormatter --out allure-results

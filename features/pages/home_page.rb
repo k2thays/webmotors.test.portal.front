@@ -56,9 +56,6 @@ class HomePage < SitePrism::Page
   element :menu_meus_anuncios, :xpath, '//*[@data-qa="header_logIn_myAds"]'
   element :menu_minha_conta, :xpath, '//*[@data-qa="header_logIn_myAccount"]'
   element :menu_produtos, :xpath, '//*[@data-qa="header_logIn_products"]'
-  
-
-  
 
   # Menu Superior de Notificações
   element :notification_upper_menu, :xpath, '//*[@data-qa="btn_header_notifications"]'
@@ -68,7 +65,7 @@ class HomePage < SitePrism::Page
   element :fechar_modal, '.modal--close'
   elements :retorno_busca, :xpath, '//*[@data-qa="Autocomplete_DropItem_Brand"]'
 
-  # MOTODOS
+  # METODOS
   def verificar_home
     wait_until_logo_visible
     logo.visible?
@@ -281,5 +278,9 @@ class HomePage < SitePrism::Page
       menu_produtos.click
       alterar_aba
     end
+  end   
+
+  def aguardar_elemento_aparecer
+    wait_until_upper_help_visible
   end   
 end
