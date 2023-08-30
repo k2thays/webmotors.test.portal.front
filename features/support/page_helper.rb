@@ -87,4 +87,8 @@ module PageObjects
     ProdutosHome.new
   end   
 
+  def carros0km
+    Carros0km.new
+  end  
+
 end
