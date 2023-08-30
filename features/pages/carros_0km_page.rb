@@ -4,8 +4,10 @@ class Carros0km < SitePrism::Page
     element :card_toyota, :xpath, '//*[@data-qa="car_advertisement-3"]'
     element :card_gwm, :xpath, '//*[@data-qa="car_advertisement-4"]'
     element :card_ford, :xpath, '//*[@data-qa="car_advertisement-5"]'
+    element :regua_completa, :xpath, '//*[@data-qa="advertisement_container"]'
 
     def selecionar_link_0km(link)
+        wait_until_regua_completa_visible
         case link
         when 'renault'
             card_renault.click
