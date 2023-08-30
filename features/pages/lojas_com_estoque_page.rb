@@ -4,7 +4,7 @@ class LojasEstoque < SitePrism::Page
     element :card03, :xpath, '//*[@data-qa="store_advertisement-3"]'
     element :card04, :xpath, '//*[@data-qa="store_advertisement-4"]'
     element :card05, :xpath, '//*[@data-qa="store_advertisement-5"]'
-    element :input_localizacao, :xpath, '//*[@data-qa="input_location_auto_complete"]'
+    element :input_localizacao, :xpath, '//*[@data-qa="input_location_auto_complete"]' 
     elements :auto_complete_localizacao, '.AutoComplete-result-name'
     element :logo_webmotors, '._IVZOj'
     

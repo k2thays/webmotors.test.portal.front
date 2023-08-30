@@ -1,5 +1,7 @@
 Quando('seleciono um dos {string} da régua') do |link|
     carfilters.scroll_to_element(produto.card_vender_carro)
+    carfilters.scroll_to_element(lojasEstoque.logo_webmotors)
+    carfilters.scroll_to_element(produto.card_vender_carro)
     carros0km.selecionar_link_0km(link)
     home_page.alterar_aba    
 end

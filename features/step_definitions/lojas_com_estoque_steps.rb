@@ -9,9 +9,12 @@ end
 
 Quando('seleciono um dos {string} da régua de lojas com estoque') do |card|
     carfilters.scroll_to_element(produto.card_vender_carro)
+    carfilters.scroll_to_element(lojasEstoque.logo_webmotors)
+    carfilters.scroll_to_element(produto.card_vender_carro)
     lojasEstoque.selecionar_link_lojas_estoque(card)
 end
 
 Então('valido se direcionamento está correto para o card de lojas com estoque') do
-    lojasEstoque.validacao_lista_rb
+    home_page.alterar_aba
+    lojasEstoque.inserir_localizacao
 end
