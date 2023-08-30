@@ -91,4 +91,8 @@ module PageObjects
     Carros0km.new
   end  
 
+  def lojasEstoque
+    LojasEstoque.new
+  end  
+
 end
