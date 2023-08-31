@@ -39,5 +39,6 @@ Entao('valido que o direcionamento do link {string} esta correto estando logado'
 end     
 
 E('acesso o footer') do 
+    footerAjuda.aceitar_cookies_rb.click if page.has_text?('Entendi', wait: 2)
     footerComprar.footer_rb.click
 end     
