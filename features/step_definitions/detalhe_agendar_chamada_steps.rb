@@ -17,7 +17,6 @@ Quando('seleciono período') do
   schedule.select_date
 end
 
-
 Entao('exibe mensagem de que foi agendado') do
   click_button 'Continuar'
   # Asserts de validação

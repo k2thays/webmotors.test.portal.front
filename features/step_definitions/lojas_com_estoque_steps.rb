@@ -16,5 +16,5 @@ end
 
 Então('valido se direcionamento está correto para o card de lojas com estoque') do
     home_page.alterar_aba
-    lojasEstoque.inserir_localizacao
+    lojasEstoque.validacao_lista_rb
 end
