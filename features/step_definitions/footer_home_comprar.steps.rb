@@ -1,6 +1,7 @@
 Quando('clicar no link {string} do menu comprar') do |menu|
     footerComprar.selecionar_link_footer_comprar(menu)
     home_page.alterar_aba
+    take_screenshot('Footer Comprar', 'Menu Comprar')
 end
 
 Entao('valido que o direcionamento do link {string} de comprar esta correto') do |menu|
@@ -38,5 +39,6 @@ Entao('valido que o direcionamento do link {string} esta correto estando logado'
 end     
 
 E('acesso o footer') do 
+    footerAjuda.aceitar_cookies_rb.click if page.has_text?('Entendi', wait: 2)
     footerComprar.footer_rb.click
 end     

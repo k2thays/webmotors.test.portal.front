@@ -6,6 +6,7 @@ class FooterAjuda < SitePrism::Page
     element :sobre_nos, :xpath, '//*[@data-qa="footer_help_institutional"]'
     element :trabalhe_com_a_gente, :xpath, '//*[@data-qa="footer_help_workWithUs"]'
     element :mapa_site, :xpath, '//*[@data-qa="footer_help_siteMap"]'
+    element :aceitar_cookies_rb, :xpath, '//*[@data-qa="btn_understoodCookieWarn"]' 
 
 
     def selecionar_link_footer_ajuda(menu)

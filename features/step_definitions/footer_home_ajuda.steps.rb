@@ -1,6 +1,7 @@
 Quando('clicar no link {string} de ajuda') do |menu|
     footerAjuda.selecionar_link_footer_ajuda(menu)
     home_page.alterar_aba
+    take_screenshot('Footer Ajuda', 'Menu Ajuda')
 end
 
 Entao('valido que o direcionamento do link {string} do menu ajuda esta correto') do |menu|
@@ -17,5 +18,6 @@ Entao('valido que o direcionamento do link {string} do menu ajuda esta correto')
         expect(page).to have_current_path('https://webmotors.gupy.io/?lkid=1099', url: true)
     when 'Mapa do site'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/mapasite?lkid=1543', url: true)
-    end     
+    end 
+    take_screenshot('Footer Ajuda', 'Menu Ajuda')    
 end 

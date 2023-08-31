@@ -1,6 +1,7 @@
 Quando('clicar no link {string} do menu institucional') do |menu|
     footerInstitucional.selecionar_link_footer_institucional(menu)
     home_page.alterar_aba
+    take_screenshot('Footer Institucional', 'Selcionar link')
 end
 
 Entao('valido que o direcionamento do link {string} de institucional esta correto') do |menu|
@@ -15,5 +16,6 @@ Entao('valido que o direcionamento do link {string} de institucional esta corret
         expect(page).to have_current_path('https://www.webmotors.com.br/seguranca/politica-de-privacidade/', url: true)
     when 'LGPD'
         expect(page).to have_current_path('https://www.webmotors.com.br/seguranca/lgpd/', url: true)
-    end    
+    end  
+    take_screenshot('Footer Institucional', 'Validação de link')  
 end

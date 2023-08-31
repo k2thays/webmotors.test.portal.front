@@ -9,7 +9,7 @@ Funcionalidade: Validar régua de produtos na home
 
   Contexto:
     Dado que estou na home da webmotors
-
+    #Regua de produtos 'Na Webmotors'
   @selecionar_card_produto
   Esquema do Cenário: Validar direcionamento do produto de financiamento 
     Quando clico em "<produto>"
