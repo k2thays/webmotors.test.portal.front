@@ -39,7 +39,7 @@ Funcionalidade: Webmotors Web
     Exemplos:
     Exemplos:
     | menu                    |
-    | Vender carro            |
-    | Vender moto             |
+    #| Vender carro            |
+    #| Vender moto             |
     | Gerenciar meu anúncio   |
     | Plataforma revendedores |

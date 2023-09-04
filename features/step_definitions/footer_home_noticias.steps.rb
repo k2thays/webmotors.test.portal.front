@@ -10,9 +10,9 @@ Entao('valido que o direcionamento do link {string} de noticias esta correto') d
     when 'Últimas notícias'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/noticias', url: true)
     when 'Testes'
-        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/testes', url: true)
+        expect(page).to have_current_path('https://www.webmotors.com.br/wm1/testes', url: true)
     when 'Comparativos'
-        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/comparativos', url: true)
+        expect(page).to have_current_path('https://www.webmotors.com.br/wm1/comparativos', url: true)
     when 'Vídeos'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/videos-de-carros-e-motos', url: true)
     when 'Motos'

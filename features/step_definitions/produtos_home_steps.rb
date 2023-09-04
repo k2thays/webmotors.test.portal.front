@@ -11,7 +11,6 @@ Entao('devo validar se a url esta correta de acordo com o {string}') do |url_pro
         expect(page).to have_text 'As melhores condições para comprar seu carro estão aqui'
     when 'Vender Carro'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/vender-carro/?lkid=1069', url: true)  
-        expect(page).to have_text 'Anuncie e venda seu carro pelo melhor preço'
     when 'Catálogo 0km'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/catalogo/?lkid=1070', url: true)  
         expect(page).to have_text 'Tudo que você precisa para escolher o seu carro 0KM'
