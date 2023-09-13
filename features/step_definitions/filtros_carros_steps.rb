@@ -23,3 +23,12 @@ Entao('retorna a busca com os filtros') do
   expect(page).to have_text 'Chevrolet usados, seminovos e novos ano 2005 até ano 2021'
   take_screenshot('filtros', 'filtros_aplicados_carros')
 end
+
+E('logo em seguida limpo os filtros') do 
+  carfilters.limpar_filtro.click
+end   
+
+E('valido se a página foi recarregada sem os filtros aplicados') do 
+  expect(page).to have_text 'Carros usados, seminovos e novos em todo o Brasil | Webmotors'
+end   
+
