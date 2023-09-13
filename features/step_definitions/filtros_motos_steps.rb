@@ -24,3 +24,8 @@ Entao('deve me retornar uma lista com os filtros aplicados') do
   expect(page).to have_text 'Motos Bmw usadas, seminovas e novas ano 2012 até ano 2021'
   take_screenshot('filtros', 'filtro_aplicados_motos')
 end
+
+E('valido se a página foi recarregada sem os filtros aplicados para moto') do 
+  expect(page).to have_text 'Motos usadas, seminovas e novas em todo o Brasil | Webmotors'
+end   
+

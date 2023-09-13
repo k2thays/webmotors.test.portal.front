@@ -21,3 +21,11 @@ Funcionalidade: Webmotors Web
     Quando entro para ver as ofertas de motos
     E seleciono uma marca e filtros
     Então deve me retornar uma lista com os filtros aplicados
+
+  @Limpar_filtro_moto
+  Cenário: Limpar filtros moto
+    Quando entro para ver as ofertas de motos
+    E faço um filtro por marca e modelo
+    Entao devo ver a lista com os modelos listados
+    E logo em seguida limpo os filtros 
+    E valido se a página foi recarregada sem os filtros aplicados para moto

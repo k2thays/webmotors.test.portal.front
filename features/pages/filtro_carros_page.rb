@@ -16,6 +16,7 @@ class CarFilters < SitePrism::Page
   element :slide_close, '.SlideLeft--opened .Filters__back'
   element :marca_carro_chevrolet, :xpath, '//*[@data-qa="filter_make_card_chevrolet"]'
   element :filtro_super_preco, :xpath, '//*[@data-qa="filter_opportunity_superPreco"]'
+  element :limpar_filtro, :xpath, '//*[@dataqa="clean_all_filters"]'
   # checkbox
   element :color_white, :xpath, '/html/body/div[1]/main/div[1]/div[2]/div/div[17]/div/div[3]/div[3]/label'
   element :color_black, :xpath, '/html/body/div/main/div[1]/div[2]/div/div[17]/div/div[3]/div[7]/label'
