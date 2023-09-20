@@ -1,14 +1,14 @@
 class Installment < SitePrism::Page
-  element :input_name, 'form[class="Forms__container"] input[name="fullName"]'
-  element :input_email, 'form[class="Forms__container"] input[name="email"]'
-  element :input_phone, 'form[class="Forms__container"] input[name="numberPhone"]'
-  element :input_birthday, 'form[class="Forms__container"] input[name="birthday"]'
-  element :input_cpf, 'form[class="Forms__container"] input[name="cpf"]'
+  element :input_name, :xpath, '//*[@data-qa="inputNameFinancing"]'
+  element :input_email, :xpath, '//*[@data-qa="inputEmailFinancing"]'
+  element :input_phone, :xpath, '//*[@data-qa="inputPhoneFinancing"]'
+  element :input_birthday, :xpath, '//*[@data-qa="inputBirthdayFinancing"]'
+  element :input_cpf, :xpath, '//*[@data-qa="inputCPFFinancing"]'
   element :location_select, '.Form__field.Form__field--select'
-  element :proposal_send, 'button[data-qa="btnSendProposalFinancing"]'
+  element :proposal_send, :xpath, '//*[@data-qa="btnSendProposalFinancing"]'
   element :ver_condicoes, :xpath, '//*[@data-qa="submitSendProposal"]' 
   element :ver_parcelas_nao_avisar, '.sc-fYxtnH.imqCGt'
-  element :input_valor, 'input[data-qa="inputIntakeFinancing"]'
+  element :input_valor, 'input[data-qa="inputIntakeFinancing"]' 
  
   def fill_form_financiamento
     input_name.set "Caio Castro"

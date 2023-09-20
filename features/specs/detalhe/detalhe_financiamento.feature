@@ -1,7 +1,7 @@
 # encoding: utf-8
 # language: pt
 
-@smoke
+@smoke @financiamento
 Funcionalidade: Validar simulação de financiamento
       Eu como Usuario
   Quero simular um financiamento
@@ -19,8 +19,7 @@ Funcionalidade: Validar simulação de financiamento
 
   @financiamento_falha 
   Esquema do Cenário: Simular financiamento
-    E faço a busca por um "Chevro"
-    E seleciono um anúncio
+    E visito a página do anuncio 
     Quando não preencho todos os campos
       | nome         | email         | telefone         | nascimento         | cpf         | estado         |
       | <nome_input> | <email_input> | <telefone_input> | <nascimento_input> | <cpf_input> | <estado_input> |
@@ -37,8 +36,7 @@ Funcionalidade: Validar simulação de financiamento
 
   @financiamento_validacao_mens_erro
   Esquema do Cenário: Validar mensagem de erro para campo nome com apenas primeiro nome
-    E faço a busca por um "Chevro"
-    E seleciono um anúncio da página
+    E visito a página do anuncio 
     Quando preencho com um campo inválido
       | nome          | email           | telefone          | nascimento             | cpf             | estado          |
       | <nome_input>  | <email_input>   | <telefone_input>  | <nascimento_input>     | <cpf_input>     | <estado_input>  |
@@ -49,8 +47,7 @@ Funcionalidade: Validar simulação de financiamento
 
     @financiamento_validacao_botao_desabilitado
     Esquema do Cenário: Validar botão desabilitado ao informar um telefone fixo
-    E faço a busca por um "Chevro"
-    E seleciono um anúncio da página
+    E visito a página do anuncio 
     Quando preencho com um campo inválido
       | nome          | email           | telefone          | nascimento             | cpf             | estado          |
       | <nome_input>  | <email_input>   | <telefone_input>  | <nascimento_input>     | <cpf_input>     | <estado_input>  |

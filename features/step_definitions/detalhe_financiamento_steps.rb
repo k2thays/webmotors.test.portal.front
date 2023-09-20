@@ -1,4 +1,6 @@
 Dado('visito a página do anuncio') do
+  js_script = 'window.localStorage.setItem(\'wbShowModalFinancingDA\', \'1547406\');'
+  page.execute_script(js_script)
   visit 'https://hportal.webmotors.com.br/comprar/chevrolet/astra/20-mpfi-cd-8v-gasolina-2p-manual/4-portas/2002-2003/1547406?pos=e1547406a:&np=1'
 end   
 

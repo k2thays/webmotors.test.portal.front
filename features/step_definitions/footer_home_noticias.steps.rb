@@ -6,7 +6,7 @@ end
 Entao('valido que o direcionamento do link {string} de noticias esta correto') do |menu|
     case menu
     when 'Portal'
-        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/?lkid=1531', url: true)
+        expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1', url: true)
     when 'Últimas notícias'
         expect(page).to have_current_path('https://hportal.webmotors.com.br/wm1/noticias', url: true)
     when 'Testes'
